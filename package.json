@@ -1,5 +1,5 @@
 {
-  "name": "khawin-khawin-club",
+  "name": "kahwin-kahwin-club",
   "version": "0.1.0",
   "private": true,
   "engines": {
@@ -61,5 +61,5 @@
     "wrangler": "4.92.0"
   },
   "type": "module",
-  "displayName": "Khawin-Khawin.club\uff5c\u9648\u6c0f\u4e66\u9662\u5a5a\u59fb\u6ce8\u518c\u4e2d\u5fc3"
+  "displayName": "Kahwin-Kahwin.club\uff5c\u9648\u6c0f\u4e66\u9662\u5a5a\u59fb\u6ce8\u518c\u4e2d\u5fc3"
 }
