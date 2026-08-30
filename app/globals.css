@@ -13,4 +13,4 @@
 @keyframes selectedHeart{50%{box-shadow:0 0 0 7px #efa9b81f}}
 @media(max-width:700px){.heart-atmosphere span:nth-child(even){display:none}.cursor-heart{display:none}}
 @media(prefers-reduced-motion:reduce){.heart-atmosphere,.cursor-heart{display:none}.avatar,.calendar .selected{animation:none}.primary,.secondary,.quickcard,.visionflow a,.levels article,.catgrid>div,.contactchoices>a,.step{transition:none}}
-.brand{display:inline-flex;align-items:center;gap:9px}.brand img{width:40px;height:40px;object-fit:cover;border-radius:10px;box-shadow:0 5px 14px #ff00663d}.brand span{display:none}footer .brand{justify-content:center}footer .brand img{width:46px;height:46px}@media(max-width:700px){.nav .brand img{width:34px;height:34px}.nav .brand{font-size:15px;gap:7px}}
+.brand{display:inline-flex;align-items:center;gap:9px}.brand img{width:40px;height:40px;object-fit:cover;border-radius:0;filter:drop-shadow(0 5px 8px #ff7da43d)}.brand span{display:none}footer .brand{justify-content:center}footer .brand img{width:46px;height:46px}@media(max-width:700px){.nav .brand img{width:34px;height:34px}.nav .brand{font-size:15px;gap:7px}}
