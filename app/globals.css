@@ -15,6 +15,9 @@
 @media(prefers-reduced-motion:reduce){.heart-atmosphere,.cursor-heart{display:none}.avatar,.calendar .selected{animation:none}.primary,.secondary,.quickcard,.visionflow a,.levels article,.catgrid>div,.contactchoices>a,.step{transition:none}}
 .brand{display:inline-flex;align-items:center;gap:9px}.brand img{width:40px;height:40px;object-fit:cover;border-radius:0;filter:drop-shadow(0 5px 8px #ff7da43d)}.brand span{display:none}footer .brand{justify-content:center}footer .brand img{width:46px;height:46px}@media(max-width:700px){.nav .brand img{width:34px;height:34px}.nav .brand{font-size:15px;gap:7px}}
 
+.nav .brand .brandcopy{display:flex;flex-direction:column;align-items:flex-start;gap:2px;margin:0}.nav .brand .brandcopy strong{font:500 20px/1.05 Georgia,"Noto Serif SC",serif}.nav .brand .brandcopy small{font:600 10px/1.2 Arial,"Noto Sans SC",sans-serif;letter-spacing:.12em;color:var(--rose)}
+@media(max-width:700px){.nav .brand .brandcopy strong{font-size:15px}.nav .brand .brandcopy small{font-size:8px;letter-spacing:.06em}}
+
 /* Wedding photography hero */
 .hero{background-image:linear-gradient(90deg,#fff8f4e8 0%,#fff2f5d9 45%,#fff8f48f 72%,#fff8f438 100%),url("/images/wedding-hero.jpg");background-size:cover;background-position:center center;background-repeat:no-repeat}
 .hero:before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(circle at 50% 43%,#fffaf7c7 0%,#fff3f5a3 31%,transparent 62%),linear-gradient(180deg,#fff8f43d 0%,transparent 58%,#fff8f4b8 100%)}
