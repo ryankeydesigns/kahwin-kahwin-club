@@ -1643,3 +1643,73 @@ html[lang="en"] .hero-title-single {
   color: var(--rose);
   text-underline-offset: 3px;
 }
+
+/* Balanced headings: keep desktop and mobile titles to clean one- or two-line blocks. */
+:where(h1, h2, h3) {
+  text-wrap: balance;
+  line-break: strict;
+  word-break: auto-phrase;
+  overflow-wrap: normal;
+}
+
+.hero h1,
+.pagehero h1 {
+  width: min(100%, 1120px);
+  max-width: calc(100vw - 72px);
+  margin-inline: auto;
+}
+
+.sectionhead h2,
+.homevision > h2,
+.nextcta h2 {
+  width: min(100%, 900px);
+  margin-inline: auto;
+}
+
+html[lang="en"] .pagehero h1 {
+  font-size: clamp(40px, 5.1vw, 72px);
+  max-width: min(1080px, calc(100vw - 72px));
+}
+
+@media (max-width: 900px) {
+  .hero-title-single {
+    white-space: normal;
+    width: min(100%, 760px);
+    max-width: calc(100vw - 40px);
+    font-size: clamp(38px, 8.2vw, 66px);
+  }
+
+  .pagehero h1 {
+    width: min(100%, 760px);
+    max-width: calc(100vw - 40px);
+    font-size: clamp(38px, 7.5vw, 62px);
+  }
+}
+
+@media (max-width: 560px) {
+  .hero-title-single,
+  .pagehero h1 {
+    width: min(100%, 430px);
+    max-width: calc(100vw - 32px);
+    font-size: clamp(32px, 9vw, 44px);
+    line-height: 1.16;
+    letter-spacing: -0.045em;
+  }
+
+  html[lang="en"] .hero-title-single,
+  html[lang="en"] .pagehero h1 {
+    font-size: clamp(28px, 8vw, 38px);
+    line-height: 1.12;
+  }
+
+  .sectionhead h2,
+  .about h2,
+  .date h2,
+  .homevision > h2,
+  .partnerintro h2,
+  .nextcta h2,
+  .contactcard h2 {
+    font-size: clamp(30px, 8.2vw, 40px);
+    line-height: 1.18;
+  }
+}
