@@ -1847,3 +1847,49 @@ html[lang="en"] .pagehero h1 {
   border-top: 1px solid #efd2d8;
   text-align: left;
 }
+
+
+/* Two-person zodiac date filters */
+.datecopy .selectors {
+  max-width: 980px;
+}
+
+.zodiac-pair {
+  flex: 2;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.zodiac-pair legend {
+  margin-bottom: 7px;
+  padding: 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.zodiac-pair > div {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.zodiac-pair select {
+  width: 100%;
+}
+
+@media (max-width: 980px) {
+  .date-filters {
+    flex-wrap: wrap;
+  }
+
+  .date-filters > label,
+  .zodiac-pair {
+    flex: 1 1 calc(50% - 6px);
+  }
+
+  .zodiac-pair {
+    flex-basis: 100%;
+  }
+}
