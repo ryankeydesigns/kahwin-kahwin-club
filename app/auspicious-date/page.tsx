@@ -78,7 +78,6 @@ function parseDates(year: Year, month: number): AlmanacDate[] {
 export default function DatePage() {
   const [year, setYear] = useState<Year>("2026");
   const [month, setMonth] = useState(10);
-  const [preference, setPreference] = useState("无特别偏好");
   const dates = useMemo(() => parseDates(year, month), [year, month]);
   const [selected, setSelected] = useState(dates[0].day);
   useEffect(() => setSelected(dates[0].day), [dates]);
@@ -127,7 +126,7 @@ export default function DatePage() {
           <span className="kicker">传统文化参考</span>
           <h2>选择适合你们的结婚好日子</h2>
           <p>
-            选择年份、月份和日期偏好，查看传统通胜标示的宜嫁娶日期，再向注册中心确认开放时段。
+            选择年份和月份，查看传统通胜标示的宜嫁娶日期，再向注册中心确认开放时段。
           </p>
           <div className="selectors">
             <label>
@@ -155,27 +154,6 @@ export default function DatePage() {
             </label>
           </div>
           <div className="selectors">
-            <label>
-              日期偏好
-              <select
-                value={preference}
-                onChange={(e) => setPreference(e.target.value)}
-              >
-                <option>偏好周末</option>
-                <option>偏好平日</option>
-                <option>无特别偏好</option>
-              </select>
-            </label>
-          </div>
-          <div className="legend">
-            <b>颜色说明（不是选择按钮）</b>
-            <span>
-              <i className="high" /> 通胜宜嫁娶
-            </span>
-            <span>
-              <i className="recommended" /> 周末好日子
-            </span>
-            <p>请在下方月历点击带有 ♡ 或 ✦ 的粉红色日期。</p>
           </div>
         </div>
         <div className="dateworkspace">
@@ -226,6 +204,16 @@ export default function DatePage() {
               );
             })}
           </div>
+          <div className="legend">
+            <b>颜色说明（不是选择按钮）</b>
+            <span>
+              <i className="high" /> 通胜宜嫁娶
+            </span>
+            <span>
+              <i className="recommended" /> 周末好日子
+            </span>
+            <p>请点击带有 ♡ 或 ✦ 的粉红色日期。</p>
+          </div>
         </div>
         <div className="dateinfo">
           <div className="datechoice">
@@ -236,7 +224,7 @@ export default function DatePage() {
               {selectedInfo.day} {monthNames[month - 1]} {year}
             </h3>
             <p>
-              {weekday} · 冲生肖：{selectedInfo.clash} · {preference}
+              {weekday} · 冲生肖：{selectedInfo.clash}
             </p>
             <div className="tongsheng-note">
               <b>注册时段</b>
