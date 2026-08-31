@@ -125,11 +125,7 @@ export default function DatePage() {
       <section className="date section">
         <div className="datecopy">
           <span className="kicker">传统文化参考</span>
-          <h2>
-            选择适合你们的
-            <br />
-            结婚好日子
-          </h2>
+          <h2>选择适合你们的结婚好日子</h2>
           <p>
             选择年份、月份和日期偏好，查看传统通胜标示的宜嫁娶日期，再向注册中心确认开放时段。
           </p>
@@ -182,7 +178,8 @@ export default function DatePage() {
             <p>请在下方月历点击带有 ♡ 或 ✦ 的粉红色日期。</p>
           </div>
         </div>
-        <div className="calendar">
+        <div className="dateworkspace">
+          <div className="calendar">
           <div className="calhead">
             <button aria-label="上一个月" onClick={previousMonth}>
               ‹
@@ -229,6 +226,8 @@ export default function DatePage() {
               );
             })}
           </div>
+        </div>
+        <div className="dateinfo">
           <div className="datechoice">
             <span>
               {isWeekend ? "✦ 通胜宜嫁娶 · 周末" : "♡ 通胜宜嫁娶"}
@@ -331,6 +330,7 @@ export default function DatePage() {
             </a>{" "}
             · 最后核对：2026年8月31日
           </p>
+        </div>
         </div>
       </section>
       <SiteFooter />
