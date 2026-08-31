@@ -126,6 +126,8 @@ const zhToEn: Record<string, string> = {
   "寻找结婚好日子 ♡": "Find a Wedding Date ♡",
   "2026–2027 通胜宜嫁娶参考 × 当天通胜详情 × 注册时段确认":
     "2026–2027 Almanac Reference × Daily Details × Registration Confirmation",
+  "2026–2029 通胜宜嫁娶参考 × 当天通胜详情 × 注册时段确认":
+    "2026–2029 Almanac Reference × Daily Details × Registration Confirmation",
   传统文化参考: "TRADITIONAL CULTURAL REFERENCE",
   选择适合你们的: "Choose a Date That Suits You",
   结婚好日子: "Wedding Dates",
@@ -205,6 +207,8 @@ const zhToEn: Record<string, string> = {
   参考资料: "Reference",
   "2026–2027 传统通胜结婚日期整理":
     "2026–2027 Traditional Almanac Wedding Date Reference",
+  "2028–2029《结婚吉日一览》（用户提供资料）":
+    "2028–2029 Wedding Date List (User-Provided Reference)",
   "最后核对：2026年8月31日": "Last reviewed: 31 August 2026",
   星期日: "Sunday",
   星期一: "Monday",
