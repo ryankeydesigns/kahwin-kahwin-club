@@ -694,6 +694,133 @@ footer small {
   }
 }
 
+/* Site-wide lightweight interactions */
+.scroll-progress {
+  position: fixed;
+  inset: 0 0 auto;
+  height: 3px;
+  z-index: 120;
+  pointer-events: none;
+}
+.scroll-progress span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #f4a9bd, #e882a1, #d6a369);
+  box-shadow: 0 0 12px rgba(232, 130, 161, 0.5);
+  transition: width 80ms linear;
+}
+.back-to-top {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(218, 142, 164, 0.35);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #6b3f4b;
+  background: rgba(255, 249, 250, 0.9);
+  box-shadow: 0 12px 35px rgba(120, 65, 82, 0.18);
+  backdrop-filter: blur(14px);
+  z-index: 90;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(14px) scale(0.9);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+  cursor: pointer;
+}
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+.back-to-top:hover {
+  color: white;
+  background: #e88aa5;
+  transform: translateY(-3px) scale(1.04);
+}
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.infocards > div,
+.catgrid > *,
+.contactchoices > *,
+.levels > * {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.infocards > div:hover,
+.catgrid > *:hover,
+.contactchoices > *:hover,
+.levels > *:hover {
+  transform: translateY(-5px);
+  border-color: rgba(232, 130, 161, 0.38);
+  box-shadow: 0 18px 42px rgba(126, 68, 85, 0.12);
+}
+.primary,
+.secondary,
+.navcta,
+button {
+  position: relative;
+  overflow: hidden;
+}
+.primary:active,
+.secondary:active,
+.navcta:active,
+button:active {
+  transform: scale(0.97);
+}
+.page-scrolled .nav {
+  box-shadow: 0 14px 45px rgba(121, 69, 84, 0.14);
+}
+.tap-heart {
+  position: fixed;
+  z-index: 140;
+  color: #e982a0;
+  font-size: 25px;
+  line-height: 1;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  animation: tap-heart-pop 0.85s ease-out forwards;
+}
+@keyframes tap-heart-pop {
+  0% { opacity: 0; transform: translate(-50%, -30%) scale(0.45) rotate(-8deg); }
+  24% { opacity: 0.9; transform: translate(-50%, -65%) scale(1.18) rotate(5deg); }
+  100% { opacity: 0; transform: translate(-50%, -170%) scale(0.9) rotate(14deg); }
+}
+@media (max-width: 700px) {
+  .back-to-top {
+    right: 14px;
+    bottom: 16px;
+    width: 44px;
+    height: 44px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll,
+  .reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .scroll-progress span,
+  .back-to-top,
+  .infocards > div,
+  .catgrid > *,
+  .contactchoices > *,
+  .levels > * {
+    transition: none;
+  }
+  .tap-heart { display: none; }
+}
+
 /* Inner-page wedding photography. The homepage keeps its existing hero artwork. */
 .pagehero {
   position: relative;
