@@ -336,6 +336,18 @@ h1 {
   gap: 8px;
   flex-wrap: wrap;
 }
+.suggesthead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.swipehint {
+  display: none;
+  color: var(--rose);
+  font-size: 11px;
+  font-weight: 700;
+}
 .suggestions button,
 .slots button {
   border: 1px solid #efc7d0;
@@ -659,22 +671,37 @@ footer small {
     border-radius: 25px;
   }
   .suggestions {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 9px;
-    overflow: visible;
-    padding-bottom: 5px;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    margin-inline: -17px;
+    padding: 3px 17px 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
+    scroll-padding-inline: 17px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .suggestions::-webkit-scrollbar {
+    display: none;
   }
   .suggestions button {
-    width: 100%;
-    min-height: 48px;
-    padding: 10px 12px;
-    white-space: normal;
-    overflow: visible;
-    border-radius: 16px;
-    line-height: 1.35;
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 78vw;
+    min-height: 46px;
+    padding: 10px 17px;
+    white-space: nowrap;
+    border-radius: 999px;
+    line-height: 1.2;
     text-align: center;
-    word-break: keep-all;
+    scroll-snap-align: start;
+    box-shadow: 0 7px 18px rgba(180, 104, 122, 0.08);
+  }
+  .swipehint {
+    display: inline;
   }
   .selectors {
     flex-direction: column;
