@@ -6,6 +6,21 @@ import { PageHero, SiteFooter, SiteHeader } from "@/components/site-shell";
 type Year = "2026" | "2027";
 type AlmanacDate = { day: number; clash: string };
 
+const clashDetails: Record<string, { dayBranch: string; direction: string }> = {
+  马: { dayBranch: "子日", direction: "南" },
+  羊: { dayBranch: "丑日", direction: "东" },
+  猴: { dayBranch: "寅日", direction: "北" },
+  鸡: { dayBranch: "卯日", direction: "西" },
+  狗: { dayBranch: "辰日", direction: "南" },
+  猪: { dayBranch: "巳日", direction: "东" },
+  鼠: { dayBranch: "午日", direction: "北" },
+  牛: { dayBranch: "未日", direction: "西" },
+  虎: { dayBranch: "申日", direction: "南" },
+  兔: { dayBranch: "酉日", direction: "东" },
+  龙: { dayBranch: "戌日", direction: "北" },
+  蛇: { dayBranch: "亥日", direction: "西" },
+};
+
 const rawDates: Record<Year, Record<number, string>> = {
   "2026": {
     1: "5鸡 7猪 8鼠 10虎 17鸡 19猪 20鼠 22虎 28猴 29鸡 31猪",
@@ -95,6 +110,12 @@ export default function DatePage() {
   const weekday = new Intl.DateTimeFormat("zh-CN", { weekday: "long" }).format(
     selectedDate,
   );
+  const lunarDate = new Intl.DateTimeFormat("zh-CN-u-ca-chinese", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  }).format(selectedDate);
+  const clashDetail = clashDetails[selectedInfo.clash];
 
   function previousMonth() {
     if (month === 1) {
@@ -251,6 +272,77 @@ export default function DatePage() {
               <b>注册时段</b>
               <span>请向陈氏书院婚姻注册中心查询及确认</span>
             </div>
+            <section className="almanac-detail" aria-live="polite">
+              <div className="almanac-detail-head">
+                <span>当天通胜详情</span>
+                <small>选择其他日期，资料会即时更新</small>
+              </div>
+              <div className="almanac-facts">
+                <article>
+                  <span>公历日期</span>
+                  <b>
+                    {year}年{month}月{selectedInfo.day}日
+                  </b>
+                </article>
+                <article>
+                  <span>农历日期</span>
+                  <b>{lunarDate}</b>
+                </article>
+                <article>
+                  <span>星期</span>
+                  <b>{weekday}</b>
+                </article>
+                <article>
+                  <span>日支</span>
+                  <b>{clashDetail.dayBranch}</b>
+                </article>
+                <article>
+                  <span>生肖冲煞</span>
+                  <b>
+                    <span>冲</span> {selectedInfo.clash} · <span>煞</span>{" "}
+                    {clashDetail.direction}
+                  </b>
+                </article>
+                <article>
+                  <span>日期属性</span>
+                  <b>{isWeekend ? "周末好日子" : "平日好日子"}</b>
+                </article>
+              </div>
+              <div className="almanac-guidance">
+                <div className="auspicious">
+                  <span>宜</span>
+                  <div>
+                    <b>嫁娶</b>
+                    <p>传统通胜标示为适合结婚、举行婚礼的参考日期。</p>
+                  </div>
+                </div>
+                <div className="caution">
+                  <span>冲</span>
+                  <div>
+                    <b>生肖 {selectedInfo.clash}</b>
+                    <p>
+                      {hasClash
+                        ? "与你选择的新人生肖相冲，建议另选日期或咨询专业择日人士。"
+                        : "所选新人生肖没有与当天冲煞生肖相同。"}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="almanac-extra">
+                <p>
+                  <b>忌与吉时</b>
+                  <span>
+                    本资料源只核对「宜嫁娶」及生肖冲煞；其他宜忌、吉神凶神、彭祖百忌和吉时，应查阅当天完整通胜或由专业择日人士进一步确认。
+                  </span>
+                </p>
+                <p>
+                  <b>注册提醒</b>
+                  <span>
+                    通胜好日子不等同注册中心开放日期，请另外查询陈氏书院婚姻注册中心的实际时段。
+                  </span>
+                </p>
+              </div>
+            </section>
             <a href="/contact">查询注册时段 ♡</a>
           </div>
           <p className="disclaimer">

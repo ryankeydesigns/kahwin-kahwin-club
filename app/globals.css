@@ -1713,3 +1713,61 @@ html[lang="en"] .pagehero h1 {
     line-height: 1.18;
   }
 }
+
+/* Daily Tong Sheng detail card */
+.almanac-detail {
+  margin-top: 18px;
+  padding: 20px;
+  border: 1px solid #efcfd7;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 14px 35px rgba(142, 79, 96, 0.08);
+}
+.almanac-detail-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #f2dce1;
+}
+.almanac-detail-head > span { color: var(--rose); font-weight: 800; letter-spacing: 0.08em; }
+.almanac-detail-head small { color: var(--muted); }
+.almanac-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+.almanac-facts article { min-width: 0; padding: 14px; border-radius: 14px; background: var(--ivory); }
+.almanac-facts article > span,
+.almanac-facts article > b { display: block; }
+.almanac-facts article > span { margin-bottom: 7px; color: var(--muted); font-size: 11px; }
+.almanac-facts article > b { color: var(--ink); font-size: 14px; line-height: 1.45; overflow-wrap: anywhere; }
+.almanac-facts article > b span { color: inherit; }
+.almanac-guidance { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+.almanac-guidance > div { display: flex; gap: 13px; padding: 16px; border-radius: 16px; }
+.almanac-guidance > div > span {
+  width: 34px; height: 34px; flex: none; display: grid; place-items: center; border-radius: 50%;
+  color: #fff; font-family: Georgia, "Noto Serif SC", serif; font-size: 18px; font-weight: 700;
+}
+.almanac-guidance .auspicious { background: #f8e7eb; }
+.almanac-guidance .auspicious > span { background: var(--pink); }
+.almanac-guidance .caution { background: #fff4e7; }
+.almanac-guidance .caution > span { background: #d99b5d; }
+.almanac-guidance b { display: block; margin-bottom: 4px; }
+.almanac-guidance p { margin: 0; font-size: 12px; line-height: 1.6; }
+.almanac-extra { display: grid; gap: 8px; margin-top: 10px; }
+.almanac-extra p {
+  display: grid; grid-template-columns: 76px 1fr; gap: 12px; margin: 0; padding: 12px 14px;
+  border-radius: 14px; background: #fff; font-size: 12px; line-height: 1.65;
+}
+.almanac-extra b { color: var(--ink); }
+.almanac-extra span { color: var(--muted); }
+@media (max-width: 700px) {
+  .almanac-detail { padding: 16px; }
+  .almanac-detail-head { align-items: flex-start; flex-direction: column; gap: 5px; }
+  .almanac-facts { grid-template-columns: 1fr 1fr; }
+  .almanac-guidance { grid-template-columns: 1fr; }
+  .almanac-extra p { grid-template-columns: 1fr; gap: 4px; }
+}
