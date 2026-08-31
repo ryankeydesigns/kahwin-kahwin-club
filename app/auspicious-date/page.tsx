@@ -3,8 +3,10 @@
 import { useEffect, useMemo, useState } from "react";
 import { PageHero, SiteFooter, SiteHeader } from "@/components/site-shell";
 
-type Year = "2026" | "2027";
-type AlmanacDate = { day: number; clash: string };
+type Year = "2026" | "2027" | "2028" | "2029";
+type AlmanacDate = { day: number; clash: string; lunar?: string };
+
+const availableYears: Year[] = ["2026", "2027", "2028", "2029"];
 
 const zodiacOptions = [
   "鼠",
@@ -66,6 +68,34 @@ const rawDates: Record<Year, Record<number, string>> = {
     11: "1虎 3龙 7猴 8鸡 11鼠 14兔 15龙 17马 20鸡 21狗 29马",
     12: "3狗 5鼠 12羊 16猪 19虎 27狗 28猪",
   },
+  "2028": {
+    1: "1鼠[腊月初二] 3虎[腊月初四] 6蛇[腊月初七] 7马[腊月初八] 11狗[腊月十二] 13鼠[腊月十四] 15虎[腊月十六] 17龙[腊月十八] 19马[腊月二十] 23狗[腊月廿四] 25鼠[腊月廿六] 28兔[腊月廿九]",
+    2: "1马[正月初三] 2羊[正月初四] 6猪[正月初八] 7鼠[正月初九] 9虎[正月十一] 11龙[正月十三] 12蛇[正月十四] 16鸡[正月十八] 18猪[正月二十] 19鼠[正月廿一] 21虎[正月廿三] 26羊[正月廿八]",
+    3: "1狗[二月初一] 3鼠[二月初三] 4牛[二月初四] 8蛇[二月初八] 11猴[二月十一] 12鸡[二月十二] 14猪[二月十四] 18兔[二月十八] 19龙[二月十九] 21马[二月廿一] 25狗[二月廿五] 29虎[二月廿九]",
+    4: "1龙[三月初一] 4羊[三月初四] 6鸡[三月初六] 7狗[三月初七] 11虎[三月十一] 14蛇[三月十四] 15马[三月十五] 17猴[三月十七] 19狗[三月十九] 23虎[三月廿三] 26蛇[三月廿六] 28羊[三月廿八]",
+    5: "2猪[四月初二] 3鼠[四月初三] 6兔[四月初六] 8蛇[四月初八] 10羊[四月十日] 13狗[四月十三] 16牛[四月十六] 18兔[四月十八] 19龙[四月十九] 22羊[四月廿二] 26猪[四月廿六] 28牛[四月廿八]",
+    6: "1龙[五月初一] 3马[五月初三] 6鸡[五月初六] 9鼠[五月初九] 11虎[五月十一] 12兔[五月十二] 14蛇[五月十四] 18鸡[五月十八] 21鼠[五月廿一] 23虎[五月廿三] 26蛇[五月廿六] 28羊[五月廿八]",
+    7: "1狗[閏五月初一] 3鼠[閏五月初三] 6兔[閏五月初六] 8蛇[閏五月初八] 11猴[閏五月十一] 14猪[閏五月十四] 16牛[閏五月十六] 18兔[閏五月十八] 21马[閏五月廿一] 24鸡[閏五月廿四] 26猪[閏五月廿六] 28牛[閏五月廿八]",
+    8: "1蛇[六月初二] 3羊[六月初四] 6狗[六月初七] 8鼠[六月九日] 10虎[六月十一] 13蛇[六月十四] 16猴[六月十七] 17鸡[六月十八] 19猪[六月二十] 22虎[六月廿三] 25蛇[六月廿六] 27羊[六月廿八]",
+    9: "1鼠[七月初一] 3虎[七月初三] 6蛇[七月初六] 8羊[七月初八] 11狗[七月十一] 13鼠[七月十三] 15虎[七月十五] 18蛇[七月十八] 22鸡[七月廿二] 24猪[七月廿四] 26牛[七月廿六] 29龙[七月廿九]",
+    10: "1马[八月初一] 4鸡[八月初四] 6猪[八月初六] 8牛[八月初八] 11龙[八月十一] 14羊[八月十四] 15猴[八月十五] 18猪[八月十八] 21虎[八月廿一] 23龙[八月廿三] 26羊[八月廿六] 29狗[八月廿九]",
+    11: "1鼠[九月初一] 3虎[九月初三] 6蛇[九月初六] 9猴[九月初九] 12猪[九月十二] 13鼠[九月十三] 15虎[九月十五] 18蛇[九月十八] 21猴[九月廿一] 24猪[九月廿四] 27虎[九月廿七] 29龙[九月廿九]",
+    12: "2羊[十月初二] 4鸡[十月初四] 6猪[十月初六] 9虎[十月初九] 12蛇[十月十二] 13马[十月十三] 16鸡[十月十六] 19鼠[十月十九] 21虎[十月廿一] 24蛇[十月廿四] 26羊[十月廿六] 29狗[十月廿九]",
+  },
+  "2029": {
+    1: "1鼠[十一月初二] 2牛[十一月初三] 5龙[十一月初六] 9猴[十一月十日] 12猪[十一月十三] 14牛[十一月十五] 16兔[十一月十七] 18蛇[十一月十九] 20羊[十一月廿一] 24猪[十一月廿五] 26牛[十一月廿七] 28兔[十一月廿九]",
+    2: "1马[腊月初二] 2羊[腊月初三] 5狗[腊月初六] 7鼠[腊月初八] 10兔[腊月十一] 12蛇[腊月十三] 14羊[腊月十五] 17狗[腊月十八] 19鼠[腊月二十] 21虎[腊月廿二] 24蛇[腊月廿五] 26羊[腊月廿七]",
+    3: "2鼠[正月初一] 5兔[正月初四] 6龙[正月初五] 9羊[正月初八] 12狗[正月十一] 14鼠[正月十三] 16虎[正月十五] 19蛇[正月十八] 21羊[正月二十] 23鸡[正月廿二] 26鼠[正月廿五] 29兔[正月廿八]",
+    4: "1马[二月初一] 2羊[二月初二] 5狗[二月初五] 7鼠[二月初七] 10兔[二月十日] 13马[二月十三] 14羊[二月十四] 16鸡[二月十六] 19鼠[二月十九] 21虎[二月廿一] 24蛇[二月廿四] 27猴[二月廿七]",
+    5: "1鼠[三月初一] 3虎[三月初三] 6蛇[三月初六] 8羊[三月初八] 11狗[三月十一] 12猪[三月十二] 15虎[三月十五] 17龙[三月十七] 19马[三月十九] 22鸡[三月廿二] 25鼠[三月廿五] 29龙[三月廿九]",
+    6: "1马[四月初一] 4鸡[四月初四] 6猪[四月初六] 8牛[四月初八] 11龙[四月十一] 14羊[四月十四] 15猴[四月十五] 17狗[四月十七] 19鼠[四月十九] 22兔[四月廿二] 26羊[四月廿六] 29狗[四月廿九]",
+    7: "1鼠[五月初一] 4兔[五月初四] 7马[五月初七] 8羊[五月初八] 11狗[五月十一] 13鼠[五月十三] 15虎[五月十五] 18蛇[五月十八] 20羊[五月二十] 22鸡[五月廿二] 25鼠[五月廿五] 28兔[五月廿八]",
+    8: "1马[六月初二] 2羊[六月初三] 5狗[六月初六] 7鼠[六月初八] 10兔[六月十一] 12蛇[六月十三] 13马[六月十四] 15猴[六月十六] 18猪[六月十九] 21虎[六月廿二] 24蛇[六月廿五] 27猴[六月廿八]",
+    9: "1鼠[七月初一] 3虎[七月初三] 6蛇[七月初六] 7马[七月初七] 10鸡[七月十日] 12猪[七月十二] 14牛[七月十四] 18蛇[七月十八] 19马[七月十九] 22猴[七月廿二] 25鼠[七月廿五] 28兔[七月廿八]",
+    10: "2羊[八月初二] 4鸡[八月初四] 6猪[八月初六] 10兔[八月十日] 12蛇[八月十二] 13马[八月十三] 16猴[八月十六] 19鼠[八月十九] 21虎[八月廿一] 24蛇[八月廿四] 27猴[八月廿七] 29狗[八月廿九]",
+    11: "1鼠[九月初二] 3虎[九月初四] 6蛇[九月初七] 7马[九月初八] 10猴[九月十一] 13猪[九月十四] 15牛[九月十六] 17兔[九月十八] 18龙[九月十九] 21羊[九月廿二] 24狗[九月廿五] 27牛[九月廿八]",
+    12: "1龙[十月初一] 3马[十月初三] 6猴[十月初六] 8狗[十月初八] 11牛[十月十一] 13兔[十月十三] 14龙[十月十四] 16马[十月十六] 20狗[十月二十] 23牛[十月廿三] 26龙[十月廿六] 29羊[十月廿九]",
+  },
 };
 
 const monthNames = [
@@ -85,10 +115,15 @@ const monthNames = [
 function parseDates(year: Year, month: number): AlmanacDate[] {
   return rawDates[year][month]
     .split(" ")
-    .map((item) => ({
-      day: Number(item.match(/\d+/)?.[0]),
-      clash: item.replace(/\d+/g, ""),
-    }));
+    .map((item) => {
+      const match = item.match(/^(\d+)([^\[\]]+)(?:\[(.+)\])?$/);
+      if (!match) throw new Error(`Invalid almanac date: ${item}`);
+      return {
+        day: Number(match[1]),
+        clash: match[2],
+        lunar: match[3],
+      };
+    });
 }
 
 export default function DatePage() {
@@ -125,24 +160,28 @@ export default function DatePage() {
   const weekday = new Intl.DateTimeFormat("zh-CN", { weekday: "long" }).format(
     selectedDate,
   );
-  const lunarDate = new Intl.DateTimeFormat("zh-CN-u-ca-chinese", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  }).format(selectedDate);
+  const lunarDate =
+    selectedInfo.lunar ??
+    new Intl.DateTimeFormat("zh-CN-u-ca-chinese", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    }).format(selectedDate);
   const clashDetail = clashDetails[selectedInfo.clash];
 
   function previousMonth() {
-    if (month === 1) {
-      if (year === "2027") setYear("2026");
-      setMonth(12);
-    } else setMonth(month - 1);
+    const index = availableYears.indexOf(year) * 12 + month - 1;
+    if (index <= 0) return;
+    const target = index - 1;
+    setYear(availableYears[Math.floor(target / 12)]);
+    setMonth((target % 12) + 1);
   }
   function nextMonth() {
-    if (month === 12) {
-      if (year === "2026") setYear("2027");
-      setMonth(1);
-    } else setMonth(month + 1);
+    const index = availableYears.indexOf(year) * 12 + month - 1;
+    if (index >= availableYears.length * 12 - 1) return;
+    const target = index + 1;
+    setYear(availableYears[Math.floor(target / 12)]);
+    setMonth((target % 12) + 1);
   }
 
   return (
@@ -153,7 +192,7 @@ export default function DatePage() {
         eyebrow="TONG SHENG WEDDING DATE GUIDE"
         title="寻找结婚好日子 ♡"
       >
-        <p>2026–2027 通胜宜嫁娶参考 × 当天通胜详情 × 注册时段确认</p>
+        <p>2026–2029 通胜宜嫁娶参考 × 当天通胜详情 × 注册时段确认</p>
       </PageHero>
       <section className="date section">
         <div className="datecopy">
@@ -169,8 +208,9 @@ export default function DatePage() {
                 value={year}
                 onChange={(e) => setYear(e.target.value as Year)}
               >
-                <option>2026</option>
-                <option>2027</option>
+                {availableYears.map((availableYear) => (
+                  <option key={availableYear}>{availableYear}</option>
+                ))}
               </select>
             </label>
             <label>
@@ -391,6 +431,7 @@ export default function DatePage() {
             >
               2026–2027 传统通胜结婚日期整理
             </a>{" "}
+            · 2028–2029《结婚吉日一览》（用户提供资料）{" "}
             · 最后核对：2026年8月31日
           </p>
           </div>
