@@ -16,7 +16,7 @@ export default function Home() {
         <div className="eyebrow">陈氏书院婚姻注册中心</div>
         <h1 className="hero-title-single">从「我要注册结婚」开始</h1>
         <p>
-          婚姻注册、良辰吉日、婚礼服务，
+          婚姻注册、结婚好日子、婚礼服务，
           <br />
           一个平台帮您准备。
         </p>
@@ -25,7 +25,7 @@ export default function Home() {
             开始我们的幸福旅程 <Heart size={18} />
           </a>
           <a className="secondary" href="/auspicious-date">
-            寻找良辰吉日 <CalendarDays size={18} />
+            寻找结婚好日子 <CalendarDays size={18} />
           </a>
         </div>
         <div className="journey">
@@ -54,7 +54,7 @@ export default function Home() {
             [Sparkles, "查询注册程序", "了解文件、费用与预约", "/ai-assistant"],
             [
               CalendarDays,
-              "寻找良辰吉日",
+              "寻找结婚好日子",
               "筛选适合你们的日子",
               "/auspicious-date",
             ],

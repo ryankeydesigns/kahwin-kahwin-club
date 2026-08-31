@@ -7,7 +7,7 @@ const links = [
   ["首页", "/"],
   ["关于中心", "/about"],
   ["注册询问", "/ai-assistant"],
-  ["良辰吉日", "/auspicious-date"],
+  ["结婚好日子", "/auspicious-date"],
   ["商家合作", "/partners"],
   ["联络我们", "/contact"],
 ];
@@ -108,7 +108,7 @@ export function SiteFooter() {
         <img src="/site-logo.svg?v=20260831-heart" alt="Kahwin-Kahwin.club heart logo" />
         Kahwin-Kahwin.club
       </a>
-      <p>Registration × AI × Auspicious Date × Wedding Marketplace</p>
+      <p>Registration × AI × Wedding Dates × Wedding Marketplace</p>
       <div className="footerlinks">
         {links.map(([n, h]) => (
           <a key={h} href={h}>

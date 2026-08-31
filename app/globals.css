@@ -1607,3 +1607,39 @@ html[lang="en"] .hero-title-single {
     );
   }
 }
+
+/* Tong Sheng wedding date guide */
+.days .clash {
+  background: #fff4e7;
+  color: #9d6738;
+  border-color: #d99b5d;
+}
+.datechoice.has-clash {
+  background: #fff4e7;
+  box-shadow: inset 0 0 0 1px #e8c69f;
+}
+.tongsheng-note {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 13px 15px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--muted);
+  font-size: 12px;
+}
+.tongsheng-note b {
+  color: var(--ink);
+  flex: none;
+}
+.date-source {
+  font-size: 11px;
+  line-height: 1.7;
+  color: var(--muted);
+  text-align: center;
+  margin: 14px 12px 0;
+}
+.date-source a {
+  color: var(--rose);
+  text-underline-offset: 3px;
+}
