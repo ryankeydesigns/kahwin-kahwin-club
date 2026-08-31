@@ -107,14 +107,13 @@ const zhToEn: Record<string, string> = {
   "良辰吉日资料属于传统文化及一般参考，不代表任何结果保证。":
     "Auspicious-date information is a traditional and general reference and does not guarantee any outcome.",
   "寻找结婚好日子 ♡": "Find a Wedding Date ♡",
-  "2026–2027 通胜宜嫁娶参考 × 生肖相冲提示 × 注册时段确认":
-    "2026–2027 Almanac Reference × Zodiac Clash Notice × Registration Confirmation",
+  "2026–2027 通胜宜嫁娶参考 × 当天通胜详情 × 注册时段确认":
+    "2026–2027 Almanac Reference × Daily Details × Registration Confirmation",
   传统文化参考: "TRADITIONAL CULTURAL REFERENCE",
   选择适合你们的: "Choose a Date That Suits You",
   结婚好日子: "Wedding Dates",
-  "选择年份、月份和生肖偏好，查看传统通胜标示的宜嫁娶日期，再向注册中心确认开放时段。":
-    "Choose a year, month and zodiac preference to view dates marked suitable for marriage in the traditional almanac, then confirm availability with the centre.",
-  新人生肖: "Your Zodiac",
+  "选择年份、月份和日期偏好，查看传统通胜标示的宜嫁娶日期，再向注册中心确认开放时段。":
+    "Choose a year, month and date preference to view dates marked suitable for marriage in the traditional almanac, then confirm availability with the centre.",
   不提供: "Prefer Not to Say",
   一月: "January",
   二月: "February",
@@ -127,8 +126,7 @@ const zhToEn: Record<string, string> = {
   九月: "September",
   通胜宜嫁娶: "Suitable for Marriage",
   周末好日子: "Weekend Wedding Date",
-  注意生肖相冲: "Check Zodiac Clash",
-  "⚠ 注意生肖相冲": "⚠ ZODIAC CLASH NOTICE",
+  当天生肖冲煞资料: "Daily Zodiac Clash Details",
   "✦ 通胜宜嫁娶 · 周末": "✦ SUITABLE FOR MARRIAGE · WEEKEND",
   "♡ 通胜宜嫁娶": "♡ SUITABLE FOR MARRIAGE",
   避忌生肖: "Clashing Zodiac",
@@ -142,6 +140,8 @@ const zhToEn: Record<string, string> = {
   星期: "Weekday",
   日支: "Day Branch",
   生肖冲煞: "Zodiac Clash & Direction",
+  生肖: "Zodiac",
+  冲生肖: "Clashing Zodiac",
   日期属性: "Date Type",
   平日好日子: "Weekday Wedding Date",
   宜: "Suitable",
@@ -149,6 +149,9 @@ const zhToEn: Record<string, string> = {
   "传统通胜标示为适合结婚、举行婚礼的参考日期。": "The traditional almanac marks this as a reference date suitable for marriage and wedding ceremonies.",
   冲: "Clash",
   煞: "Direction",
+  当天通胜显示: "The daily almanac shows",
+  "相关生肖可自行考虑或咨询专业择日人士。":
+    "Couples concerned about the related zodiac may consider another date or consult a professional.",
   "与你选择的新人生肖相冲，建议另选日期或咨询专业择日人士。": "This clashes with the selected zodiac. Consider another date or consult a professional date-selection practitioner.",
   "所选新人生肖没有与当天冲煞生肖相同。": "The selected zodiac does not match the day’s clashing zodiac.",
   忌与吉时: "Restrictions & Auspicious Hours",
@@ -159,8 +162,8 @@ const zhToEn: Record<string, string> = {
   东: "East",
   北: "North",
   西: "West",
-  "日期根据传统通胜「宜嫁娶」资料整理，仅供民俗文化与一般参考，并非专业命理择日，也不代表任何结果保证。生肖相冲提示不等同个人八字合婚；注册日期及时间以陈氏书院婚姻注册中心最终确认为准。":
-    "Dates are compiled from traditional almanac references marked suitable for marriage. They are for cultural and general reference only, not professional fortune selection or a guarantee of outcomes. Zodiac clash notices are not a personal birth-chart assessment; registration dates and times remain subject to final confirmation by the centre.",
+  "日期根据传统通胜「宜嫁娶」资料整理，仅供民俗文化与一般参考，并非专业命理择日，也不代表任何结果保证。冲煞资料不等同个人八字合婚；注册日期及时间以陈氏书院婚姻注册中心最终确认为准。":
+    "Dates are compiled from traditional almanac references marked suitable for marriage. They are for cultural and general reference only, not professional date selection or a guarantee of outcomes. Clash details are not a personal birth-chart assessment; registration dates and times remain subject to final confirmation by the centre.",
   参考资料: "Reference",
   "2026–2027 传统通胜结婚日期整理":
     "2026–2027 Traditional Almanac Wedding Date Reference",

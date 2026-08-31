@@ -66,22 +66,6 @@ const monthNames = [
   "十一月",
   "十二月",
 ];
-const zodiacs = [
-  "不提供",
-  "鼠",
-  "牛",
-  "虎",
-  "兔",
-  "龙",
-  "蛇",
-  "马",
-  "羊",
-  "猴",
-  "鸡",
-  "狗",
-  "猪",
-];
-
 function parseDates(year: Year, month: number): AlmanacDate[] {
   return rawDates[year][month]
     .split(" ")
@@ -95,7 +79,6 @@ export default function DatePage() {
   const [year, setYear] = useState<Year>("2026");
   const [month, setMonth] = useState(10);
   const [preference, setPreference] = useState("无特别偏好");
-  const [zodiac, setZodiac] = useState("不提供");
   const dates = useMemo(() => parseDates(year, month), [year, month]);
   const [selected, setSelected] = useState(dates[0].day);
   useEffect(() => setSelected(dates[0].day), [dates]);
@@ -106,7 +89,6 @@ export default function DatePage() {
   const selectedInfo = dates.find((item) => item.day === selected) ?? dates[0];
   const selectedDate = new Date(Number(year), month - 1, selectedInfo.day);
   const isWeekend = [0, 6].includes(selectedDate.getDay());
-  const hasClash = zodiac !== "不提供" && zodiac === selectedInfo.clash;
   const weekday = new Intl.DateTimeFormat("zh-CN", { weekday: "long" }).format(
     selectedDate,
   );
@@ -138,7 +120,7 @@ export default function DatePage() {
         eyebrow="TONG SHENG WEDDING DATE GUIDE"
         title="寻找结婚好日子 ♡"
       >
-        <p>2026–2027 通胜宜嫁娶参考 × 生肖相冲提示 × 注册时段确认</p>
+        <p>2026–2027 通胜宜嫁娶参考 × 当天通胜详情 × 注册时段确认</p>
       </PageHero>
       <section className="date section">
         <div className="datecopy">
@@ -149,7 +131,7 @@ export default function DatePage() {
             结婚好日子
           </h2>
           <p>
-            选择年份、月份和生肖偏好，查看传统通胜标示的宜嫁娶日期，再向注册中心确认开放时段。
+            选择年份、月份和日期偏好，查看传统通胜标示的宜嫁娶日期，再向注册中心确认开放时段。
           </p>
           <div className="selectors">
             <label>
@@ -178,17 +160,6 @@ export default function DatePage() {
           </div>
           <div className="selectors">
             <label>
-              新人生肖
-              <select
-                value={zodiac}
-                onChange={(e) => setZodiac(e.target.value)}
-              >
-                {zodiacs.map((item) => (
-                  <option key={item}>{item}</option>
-                ))}
-              </select>
-            </label>
-            <label>
               日期偏好
               <select
                 value={preference}
@@ -208,7 +179,7 @@ export default function DatePage() {
               <i className="recommended" /> 周末好日子
             </span>
             <span>
-              <i className="limited" /> 注意生肖相冲
+              <i className="limited" /> 当天生肖冲煞资料
             </span>
           </div>
         </div>
@@ -239,34 +210,28 @@ export default function DatePage() {
                 [0, 6].includes(
                   new Date(Number(year), month - 1, day).getDay(),
                 );
-              const clash =
-                info && zodiac !== "不提供" && zodiac === info.clash;
               return (
                 <button
                   key={index}
                   disabled={!info}
-                  className={`${info ? (weekend ? "high" : "recommended") : ""} ${clash ? "limited clash" : ""} ${selected === day ? "selected" : ""}`}
+                  className={`${info ? (weekend ? "high" : "recommended") : ""} ${selected === day ? "selected" : ""}`}
                   onClick={() => info && setSelected(day)}
                 >
                   {day > 0 && day <= daysInMonth ? day : ""}
-                  {info && <small>{clash ? "!" : weekend ? "✦" : "♡"}</small>}
+                  {info && <small>{weekend ? "✦" : "♡"}</small>}
                 </button>
               );
             })}
           </div>
-          <div className={`datechoice ${hasClash ? "has-clash" : ""}`}>
+          <div className="datechoice">
             <span>
-              {hasClash
-                ? "⚠ 注意生肖相冲"
-                : isWeekend
-                  ? "✦ 通胜宜嫁娶 · 周末"
-                  : "♡ 通胜宜嫁娶"}
+              {isWeekend ? "✦ 通胜宜嫁娶 · 周末" : "♡ 通胜宜嫁娶"}
             </span>
             <h3>
               {selectedInfo.day} {monthNames[month - 1]} {year}
             </h3>
             <p>
-              {weekday} · 避忌生肖：{selectedInfo.clash} · {preference}
+              {weekday} · 冲生肖：{selectedInfo.clash} · {preference}
             </p>
             <div className="tongsheng-note">
               <b>注册时段</b>
@@ -321,9 +286,10 @@ export default function DatePage() {
                   <div>
                     <b>生肖 {selectedInfo.clash}</b>
                     <p>
-                      {hasClash
-                        ? "与你选择的新人生肖相冲，建议另选日期或咨询专业择日人士。"
-                        : "所选新人生肖没有与当天冲煞生肖相同。"}
+                      <span>当天通胜显示</span> <span>冲</span>
+                      {selectedInfo.clash}、<span>煞</span>
+                      {clashDetail.direction}，
+                      <span>相关生肖可自行考虑或咨询专业择日人士。</span>
                     </p>
                   </div>
                 </div>
@@ -346,7 +312,7 @@ export default function DatePage() {
             <a href="/contact">查询注册时段 ♡</a>
           </div>
           <p className="disclaimer">
-            日期根据传统通胜「宜嫁娶」资料整理，仅供民俗文化与一般参考，并非专业命理择日，也不代表任何结果保证。生肖相冲提示不等同个人八字合婚；注册日期及时间以陈氏书院婚姻注册中心最终确认为准。
+            日期根据传统通胜「宜嫁娶」资料整理，仅供民俗文化与一般参考，并非专业命理择日，也不代表任何结果保证。冲煞资料不等同个人八字合婚；注册日期及时间以陈氏书院婚姻注册中心最终确认为准。
           </p>
           <p className="date-source">
             参考资料：

@@ -1609,15 +1609,6 @@ html[lang="en"] .hero-title-single {
 }
 
 /* Tong Sheng wedding date guide */
-.days .clash {
-  background: #fff4e7;
-  color: #9d6738;
-  border-color: #d99b5d;
-}
-.datechoice.has-clash {
-  background: #fff4e7;
-  box-shadow: inset 0 0 0 1px #e8c69f;
-}
 .tongsheng-note {
   display: flex;
   justify-content: space-between;
