@@ -744,10 +744,17 @@ footer small {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background:
-    radial-gradient(circle at 15% 45%, #f8dde4, transparent 28%),
-    radial-gradient(circle at 85% 60%, #efa9b83d, transparent 24%),
-    linear-gradient(145deg, #fff, var(--blush), var(--ivory));
+  background-color: var(--blush);
+}
+
+@media (max-width: 700px) {
+  .pagehero {
+    background-size: cover;
+    background-position: center center;
+  }
+  .pagehero::before {
+    background: rgba(255, 246, 246, 0.48);
+  }
 }
 .pagehero > span {
   font-size: 12px;
