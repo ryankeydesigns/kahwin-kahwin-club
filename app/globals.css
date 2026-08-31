@@ -1838,3 +1838,12 @@ html[lang="en"] .pagehero h1 {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Calendar legend below calendar grid */
+.calendar .legend {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid #efd2d8;
+  text-align: left;
+}
