@@ -267,6 +267,7 @@ const zhToEn: Record<string, string> = {
   "问问我们的 Wedding Assistant…": "Ask our Wedding Assistant…",
   发送: "Send",
   打开菜单: "Open menu",
+  "AI Wedding Assistant 对话回复": "AI Wedding Assistant conversation replies",
 };
 
 const enToZh = Object.fromEntries(
