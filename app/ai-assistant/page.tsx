@@ -1,6 +1,6 @@
 "use client";
 import { Send, Sparkles, Trash2 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { PageHero, SiteFooter, SiteHeader } from "@/components/site-shell";
 
 const qs = [
@@ -52,6 +52,7 @@ const demoReplies: Record<string, string> = {
 };
 
 export default function Assistant() {
+  const chatstreamRef = useRef<HTMLDivElement>(null);
   const [message, setMessage] = useState(""),
     [history, setHistory] = useState<{ role: string; text: string }[]>([
       {
@@ -59,6 +60,16 @@ export default function Assistant() {
         text: "您好 ♡ 我是 Kahwin-Kahwin AI Wedding Assistant。我可以帮您了解注册程序、寻找适合日期，以及推荐婚礼服务。",
       },
     ]);
+
+  useEffect(() => {
+    const stream = chatstreamRef.current;
+    if (!stream) return;
+    const frame = window.requestAnimationFrame(() => {
+      stream.scrollTo({ top: stream.scrollHeight, behavior: "smooth" });
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, [history.length]);
+
   function ask(q?: string) {
     const v = (q ?? message).trim();
     if (!v) return;
@@ -109,19 +120,27 @@ export default function Assistant() {
               <Trash2 size={15} /> 清除对话
             </button>
           </div>
-          <div className="chatstream">
+          <div className="questionchoices">
+            <p className="suggestlabel">您也可以这样问：</p>
+            <div className="suggestions">
+              {qs.map((q) => (
+                <button key={q} onClick={() => ask(q)}>
+                  {q}
+                </button>
+              ))}
+            </div>
+          </div>
+          <div
+            className="chatstream"
+            ref={chatstreamRef}
+            role="log"
+            aria-live="polite"
+            aria-label="AI Wedding Assistant 对话回复"
+          >
             {history.map((x, i) => (
               <div key={i} className={`bubble ${x.role}`}>
                 {x.text}
               </div>
-            ))}
-          </div>
-          <p className="suggestlabel">您也可以这样问：</p>
-          <div className="suggestions">
-            {qs.map((q) => (
-              <button key={q} onClick={() => ask(q)}>
-                {q}
-              </button>
             ))}
           </div>
           <div className="inputbar">
