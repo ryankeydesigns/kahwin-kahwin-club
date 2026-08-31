@@ -1,5 +1,5 @@
 "use client";
-import { Menu, X } from "lucide-react";
+import { Menu, Sparkles, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { LanguageToggle } from "@/components/site-i18n";
 
@@ -98,6 +98,14 @@ export function SiteHeader() {
           {open ? <X /> : <Menu />}
         </button>
       </nav>
+      <a
+        className="assistant-fab"
+        href="/ai-assistant"
+        aria-label="AI Wedding Assistant"
+      >
+        <Sparkles aria-hidden="true" />
+        <span>AI Wedding Assistant</span>
+      </a>
     </>
   );
 }
