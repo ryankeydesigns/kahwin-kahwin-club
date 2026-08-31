@@ -128,7 +128,7 @@ export function PageHero({
 }: {
   eyebrow: string;
   title: string;
-  variant: "registration" | "details" | "partners";
+  variant: "registration" | "assistant" | "details" | "partners" | "contact";
   children?: React.ReactNode;
 }) {
   return (

@@ -46,7 +46,7 @@ export default function Assistant() {
     <main>
       <SiteHeader />
       <PageHero
-        variant="registration"
+        variant="assistant"
         eyebrow="ROMANTIC WEDDING AI"
         title="AI Wedding Assistant"
       >

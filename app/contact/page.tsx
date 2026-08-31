@@ -5,7 +5,7 @@ export default function Contact() {
     <main>
       <SiteHeader />
       <PageHero
-        variant="details"
+        variant="contact"
         eyebrow="CONTACT US"
         title="开始我们的幸福旅程 ♡"
       >

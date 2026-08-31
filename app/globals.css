@@ -723,11 +723,17 @@ footer small {
 .pagehero-registration {
   background-image: url("/images/registration-hero.jpg");
 }
+.pagehero-assistant {
+  background-image: url("/images/ai-wedding-assistant-hero.jpg");
+}
 .pagehero-details {
   background-image: url("/images/date-contact-hero.jpg");
 }
 .pagehero-partners {
   background-image: url("/images/partners-hero.jpg");
+}
+.pagehero-contact {
+  background-image: url("/images/contact-appointment-hero.jpg");
 }
 
 @media (max-width: 700px) {
