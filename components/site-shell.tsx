@@ -1,6 +1,7 @@
 "use client";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { LanguageToggle } from "@/components/site-i18n";
 
 const links=[["首页","/"],["关于中心","/about"],["注册询问","/ai-assistant"],["良辰吉日","/auspicious-date"],["商家合作","/partners"],["联络我们","/contact"]];
 
@@ -10,6 +11,6 @@ function HeartAtmosphere(){
   return <div className="heart-atmosphere" aria-hidden="true">{floaters.map((h,i)=><span key={i} style={{left:`${h.x}%`,top:`${h.y}%`,fontSize:h.z,animationDelay:`-${h.d}s`}}>{h.s}</span>)}</div>;
 }
 
-export function SiteHeader(){const [open,setOpen]=useState(false);return <><HeartAtmosphere/><nav className="nav"><a className="brand" href="/"><img src="/site-logo.svg" alt="KK"/><span className="brandcopy"><strong>Kahwin-Kahwin.club</strong><small>陈氏书院婚姻注册中心</small></span></a><div className={open?"navlinks open":"navlinks"}>{links.map(([n,h])=><a key={h} href={h} onClick={()=>setOpen(false)}>{n}</a>)}</div><a className="navcta" href="/ai-assistant">开始注册询问 ♡</a><button className="menubtn" aria-label="打开菜单" onClick={()=>setOpen(!open)}>{open?<X/>:<Menu/>}</button></nav></>}
+export function SiteHeader(){const [open,setOpen]=useState(false);return <><HeartAtmosphere/><nav className="nav"><a className="brand" href="/"><img src="/site-logo.svg" alt="KK"/><span className="brandcopy"><strong>Kahwin-Kahwin.club</strong><small>陈氏书院婚姻注册中心</small></span></a><div className={open?"navlinks open":"navlinks"}>{links.map(([n,h])=><a key={h} href={h} onClick={()=>setOpen(false)}>{n}</a>)}</div><LanguageToggle/><a className="navcta" href="/ai-assistant">开始注册询问 ♡</a><button className="menubtn" aria-label="打开菜单" onClick={()=>setOpen(!open)}>{open?<X/>:<Menu/>}</button></nav></>}
 export function SiteFooter(){return <footer><a className="brand" href="/"><img src="/site-logo.svg" alt="KK"/>Kahwin-Kahwin.club</a><p>Registration × AI × Auspicious Date × Wedding Marketplace</p><div className="footerlinks">{links.map(([n,h])=><a key={h} href={h}>{n}</a>)}</div><small>© 2026 Kahwin-Kahwin.club · 陈氏书院婚姻注册中心</small></footer>}
 export function PageHero({eyebrow,title,children}:{eyebrow:string,title:string,children?:React.ReactNode}){return <section className="pagehero"><span>{eyebrow}</span><h1>{title}</h1>{children}</section>}
