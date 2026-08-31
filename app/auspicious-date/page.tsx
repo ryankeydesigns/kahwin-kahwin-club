@@ -172,15 +172,14 @@ export default function DatePage() {
             </label>
           </div>
           <div className="legend">
+            <b>颜色说明（不是选择按钮）</b>
             <span>
               <i className="high" /> 通胜宜嫁娶
             </span>
             <span>
               <i className="recommended" /> 周末好日子
             </span>
-            <span>
-              <i className="limited" /> 当天生肖冲煞资料
-            </span>
+            <p>请在下方月历点击带有 ♡ 或 ✦ 的粉红色日期。</p>
           </div>
         </div>
         <div className="calendar">
@@ -214,6 +213,13 @@ export default function DatePage() {
                 <button
                   key={index}
                   disabled={!info}
+                  aria-label={
+                    info
+                      ? `${year}年${month}月${day}日，可选择查看通胜详情`
+                      : day > 0 && day <= daysInMonth
+                        ? `${year}年${month}月${day}日，未列为通胜宜嫁娶日期`
+                        : undefined
+                  }
                   className={`${info ? (weekend ? "high" : "recommended") : ""} ${selected === day ? "selected" : ""}`}
                   onClick={() => info && setSelected(day)}
                 >

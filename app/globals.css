@@ -1762,3 +1762,20 @@ html[lang="en"] .pagehero h1 {
   .almanac-guidance { grid-template-columns: 1fr; }
   .almanac-extra p { grid-template-columns: 1fr; gap: 4px; }
 }
+
+/* Clear selectable-date affordance */
+.days button:not(:disabled) {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.days button:not(:disabled):hover {
+  z-index: 1;
+  transform: translateY(-2px) scale(1.06);
+  box-shadow: 0 9px 20px rgba(201, 143, 152, 0.26);
+}
+.days button:disabled { cursor: not-allowed; opacity: 0.36; }
+.legend > b { margin-bottom: 3px; color: var(--ink); font-size: 13px; }
+.legend > p {
+  margin: 4px 0 0; padding: 11px 13px; border-radius: 12px; background: #fff;
+  color: var(--rose); font-size: 12px; font-weight: 700; line-height: 1.55;
+}

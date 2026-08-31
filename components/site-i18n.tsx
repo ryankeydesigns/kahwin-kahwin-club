@@ -126,7 +126,9 @@ const zhToEn: Record<string, string> = {
   九月: "September",
   通胜宜嫁娶: "Suitable for Marriage",
   周末好日子: "Weekend Wedding Date",
-  当天生肖冲煞资料: "Daily Zodiac Clash Details",
+  "颜色说明（不是选择按钮）": "Colour Guide (Not Selection Buttons)",
+  "请在下方月历点击带有 ♡ 或 ✦ 的粉红色日期。":
+    "Tap a pink date marked ♡ or ✦ in the calendar below.",
   "✦ 通胜宜嫁娶 · 周末": "✦ SUITABLE FOR MARRIAGE · WEEKEND",
   "♡ 通胜宜嫁娶": "♡ SUITABLE FOR MARRIAGE",
   避忌生肖: "Clashing Zodiac",
