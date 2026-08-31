@@ -76,8 +76,11 @@ export default function Assistant() {
               </div>
             ))}
           </div>
-          <p className="suggestlabel">您也可以这样问：</p>
-          <div className="suggestions">
+          <div className="suggesthead">
+            <p className="suggestlabel">您也可以这样问：</p>
+            <span className="swipehint">左右滑动选择 Keyword</span>
+          </div>
+          <div className="suggestions" aria-label="常用问题 Keyword">
             {suggested.map((q) => (
               <button key={q} onClick={() => ask(q)}>
                 {q}
