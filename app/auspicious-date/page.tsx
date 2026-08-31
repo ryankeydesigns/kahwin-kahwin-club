@@ -6,6 +6,22 @@ import { PageHero, SiteFooter, SiteHeader } from "@/components/site-shell";
 type Year = "2026" | "2027";
 type AlmanacDate = { day: number; clash: string };
 
+const zodiacOptions = [
+  "鼠",
+  "牛",
+  "虎",
+  "兔",
+  "龙",
+  "蛇",
+  "马",
+  "羊",
+  "猴",
+  "鸡",
+  "狗",
+  "猪",
+] as const;
+type Zodiac = (typeof zodiacOptions)[number] | "";
+
 const clashDetails: Record<string, { dayBranch: string; direction: string }> = {
   马: { dayBranch: "子日", direction: "南" },
   羊: { dayBranch: "丑日", direction: "东" },
@@ -78,14 +94,32 @@ function parseDates(year: Year, month: number): AlmanacDate[] {
 export default function DatePage() {
   const [year, setYear] = useState<Year>("2026");
   const [month, setMonth] = useState(10);
+  const [zodiacOne, setZodiacOne] = useState<Zodiac>("");
+  const [zodiacTwo, setZodiacTwo] = useState<Zodiac>("");
   const dates = useMemo(() => parseDates(year, month), [year, month]);
+  const filteredDates = useMemo(
+    () =>
+      dates.filter(
+        (item) => item.clash !== zodiacOne && item.clash !== zodiacTwo,
+      ),
+    [dates, zodiacOne, zodiacTwo],
+  );
   const [selected, setSelected] = useState(dates[0].day);
-  useEffect(() => setSelected(dates[0].day), [dates]);
+  useEffect(() => {
+    setSelected((current) =>
+      filteredDates.some((item) => item.day === current)
+        ? current
+        : filteredDates[0]?.day ?? dates[0].day,
+    );
+  }, [dates, filteredDates]);
 
   const firstWeekday = new Date(Number(year), month - 1, 1).getDay();
   const daysInMonth = new Date(Number(year), month, 0).getDate();
   const cellCount = Math.ceil((firstWeekday + daysInMonth) / 7) * 7;
-  const selectedInfo = dates.find((item) => item.day === selected) ?? dates[0];
+  const selectedInfo =
+    filteredDates.find((item) => item.day === selected) ??
+    filteredDates[0] ??
+    dates[0];
   const selectedDate = new Date(Number(year), month - 1, selectedInfo.day);
   const isWeekend = [0, 6].includes(selectedDate.getDay());
   const weekday = new Intl.DateTimeFormat("zh-CN", { weekday: "long" }).format(
@@ -126,9 +160,9 @@ export default function DatePage() {
           <span className="kicker">传统文化参考</span>
           <h2>选择适合你们的结婚好日子</h2>
           <p>
-            选择年份和月份，查看传统通胜标示的宜嫁娶日期，再向注册中心确认开放时段。
+            选择年份、月份和两位新人生肖，系统会避开相冲日期，再向注册中心确认开放时段。
           </p>
-          <div className="selectors">
+          <div className="selectors date-filters">
             <label>
               计划年份
               <select
@@ -152,70 +186,111 @@ export default function DatePage() {
                 ))}
               </select>
             </label>
-          </div>
-          <div className="selectors">
+            <fieldset className="zodiac-pair">
+              <legend>新人生肖</legend>
+              <div>
+                <select
+                  aria-label="新人一生肖"
+                  value={zodiacOne}
+                  onChange={(e) => setZodiacOne(e.target.value as Zodiac)}
+                >
+                  <option value="">新人一</option>
+                  {zodiacOptions.map((zodiac) => (
+                    <option
+                      value={zodiac}
+                      key={zodiac}
+                      disabled={zodiac === zodiacTwo}
+                    >
+                      {zodiac}
+                    </option>
+                  ))}
+                </select>
+                <select
+                  aria-label="新人二生肖"
+                  value={zodiacTwo}
+                  onChange={(e) => setZodiacTwo(e.target.value as Zodiac)}
+                >
+                  <option value="">新人二</option>
+                  {zodiacOptions.map((zodiac) => (
+                    <option
+                      value={zodiac}
+                      key={zodiac}
+                      disabled={zodiac === zodiacOne}
+                    >
+                      {zodiac}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </fieldset>
           </div>
         </div>
         <div className="dateworkspace">
           <div className="calendar">
-          <div className="calhead">
-            <button aria-label="上一个月" onClick={previousMonth}>
-              ‹
-            </button>
-            <b>
-              {monthNames[month - 1]} {year}
-            </b>
-            <button aria-label="下一个月" onClick={nextMonth}>
-              ›
-            </button>
-          </div>
-          <div className="week">
-            {["日", "一", "二", "三", "四", "五", "六"].map((x) => (
-              <span key={x}>{x}</span>
-            ))}
-          </div>
-          <div className="days">
-            {Array.from({ length: cellCount }, (_, index) => {
-              const day = index - firstWeekday + 1;
-              const info = dates.find((item) => item.day === day);
-              const weekend =
-                day > 0 &&
-                day <= daysInMonth &&
-                [0, 6].includes(
-                  new Date(Number(year), month - 1, day).getDay(),
+            <div className="calhead">
+              <button aria-label="上一个月" onClick={previousMonth}>
+                ‹
+              </button>
+              <b>
+                {monthNames[month - 1]} {year}
+              </b>
+              <button aria-label="下一个月" onClick={nextMonth}>
+                ›
+              </button>
+            </div>
+            <div className="week">
+              {["日", "一", "二", "三", "四", "五", "六"].map((x) => (
+                <span key={x}>{x}</span>
+              ))}
+            </div>
+            <div className="days">
+              {Array.from({ length: cellCount }, (_, index) => {
+                const day = index - firstWeekday + 1;
+                const originalInfo = dates.find((item) => item.day === day);
+                const info = filteredDates.find((item) => item.day === day);
+                const weekend =
+                  day > 0 &&
+                  day <= daysInMonth &&
+                  [0, 6].includes(
+                    new Date(Number(year), month - 1, day).getDay(),
+                  );
+                return (
+                  <button
+                    key={index}
+                    disabled={!info}
+                    aria-label={
+                      info
+                        ? `${year}年${month}月${day}日，可选择查看通胜详情`
+                        : originalInfo
+                          ? `${year}年${month}月${day}日，与新人生肖相冲，已避开`
+                        : day > 0 && day <= daysInMonth
+                          ? `${year}年${month}月${day}日，未列为通胜宜嫁娶日期`
+                          : undefined
+                    }
+                    className={`${info ? (weekend ? "high" : "recommended") : ""} ${selected === day ? "selected" : ""}`}
+                    onClick={() => info && setSelected(day)}
+                  >
+                    {day > 0 && day <= daysInMonth ? day : ""}
+                    {info && <small>{weekend ? "✦" : "♡"}</small>}
+                  </button>
                 );
-              return (
-                <button
-                  key={index}
-                  disabled={!info}
-                  aria-label={
-                    info
-                      ? `${year}年${month}月${day}日，可选择查看通胜详情`
-                      : day > 0 && day <= daysInMonth
-                        ? `${year}年${month}月${day}日，未列为通胜宜嫁娶日期`
-                        : undefined
-                  }
-                  className={`${info ? (weekend ? "high" : "recommended") : ""} ${selected === day ? "selected" : ""}`}
-                  onClick={() => info && setSelected(day)}
-                >
-                  {day > 0 && day <= daysInMonth ? day : ""}
-                  {info && <small>{weekend ? "✦" : "♡"}</small>}
-                </button>
-              );
-            })}
+              })}
+            </div>
+            <div className="legend">
+              <b>颜色说明（不是选择按钮）</b>
+              <span>
+                <i className="high" /> 通胜宜嫁娶
+              </span>
+              <span>
+                <i className="recommended" /> 周末好日子
+              </span>
+              <p>请点击带有 ♡ 或 ✦ 的粉红色日期。</p>
+              {(zodiacOne || zodiacTwo) && (
+                <p>已自动隐藏与新人生肖相冲的日期。</p>
+              )}
+            </div>
           </div>
-          <div className="legend">
-            <b>颜色说明（不是选择按钮）</b>
-            <span>
-              <i className="high" /> 通胜宜嫁娶
-            </span>
-            <span>
-              <i className="recommended" /> 周末好日子
-            </span>
-            <p>请点击带有 ♡ 或 ✦ 的粉红色日期。</p>
-          </div>
-        </div>
-        <div className="dateinfo">
+          <div className="dateinfo">
           <div className="datechoice">
             <span>
               {isWeekend ? "✦ 通胜宜嫁娶 · 周末" : "♡ 通胜宜嫁娶"}
@@ -318,7 +393,7 @@ export default function DatePage() {
             </a>{" "}
             · 最后核对：2026年8月31日
           </p>
-        </div>
+          </div>
         </div>
       </section>
       <SiteFooter />
