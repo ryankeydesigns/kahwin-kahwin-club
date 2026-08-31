@@ -73,7 +73,7 @@ export function SiteHeader() {
       <HeartAtmosphere />
       <nav className="nav">
         <a className="brand" href="/">
-          <img src="/site-logo.svg" alt="KK" />
+          <img src="/site-logo.svg?v=20260831-heart" alt="Kahwin-Kahwin.club heart logo" />
           <span className="brandcopy">
             <strong>Kahwin-Kahwin.club</strong>
             <small>陈氏书院婚姻注册中心</small>
@@ -105,7 +105,7 @@ export function SiteFooter() {
   return (
     <footer>
       <a className="brand" href="/">
-        <img src="/site-logo.svg" alt="KK" />
+        <img src="/site-logo.svg?v=20260831-heart" alt="Kahwin-Kahwin.club heart logo" />
         Kahwin-Kahwin.club
       </a>
       <p>Registration × AI × Auspicious Date × Wedding Marketplace</p>
