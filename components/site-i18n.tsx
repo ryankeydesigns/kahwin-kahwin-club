@@ -85,27 +85,6 @@ const zhToEn: Record<string, string> = {
     "Yes ♡ Tell me your budget, date and area, and the system will shortlist suitable services and exclusive offers from our partner vendors.",
   "资料只依据注册中心与合作商家确认的内容，不会自行编造费用、条例或优惠。":
     "Information is based only on content confirmed by the registration centre and partner vendors. Fees, rules and offers are never invented.",
-  "为我们寻找一个好日子 ♡": "Find a Beautiful Date for Us ♡",
-  告诉我们你们的: "Tell Us Your",
-  日期偏好: "Date Preferences",
-  "系统结合注册中心开放时段与管理员确认的传统日期资料，提供清楚、安全的参考。":
-    "The system combines the centre’s available sessions with administrator-confirmed traditional date information to provide clear, responsible guidance.",
-  计划年份: "Preferred Year",
-  计划月份: "Preferred Month",
-  十月: "October",
-  十一月: "November",
-  十二月: "December",
-  偏好周末: "Prefer Weekend",
-  偏好平日: "Prefer Weekday",
-  无特别偏好: "No Preference",
-  高度推荐: "Highly Recommended",
-  推荐: "Recommended",
-  名额有限: "Limited",
-  "✦ 高度推荐": "✦ HIGHLY RECOMMENDED",
-  "星期日 · 尚有注册时段 ·": "Sunday · Registration sessions available ·",
-  "选择这个日子 ♡": "Choose This Date ♡",
-  "良辰吉日资料属于传统文化及一般参考，不代表任何结果保证。":
-    "Auspicious-date information is a traditional and general reference and does not guarantee any outcome.",
   "寻找结婚好日子 ♡": "Find a Wedding Date ♡",
   "2026–2027 通胜宜嫁娶参考 × 当天通胜详情 × 注册时段确认":
     "2026–2027 Almanac Reference × Daily Details × Registration Confirmation",
@@ -114,6 +93,13 @@ const zhToEn: Record<string, string> = {
   结婚好日子: "Wedding Dates",
   "选择年份、月份和日期偏好，查看传统通胜标示的宜嫁娶日期，再向注册中心确认开放时段。":
     "Choose a year, month and date preference to view dates marked suitable for marriage in the traditional almanac, then confirm availability with the centre.",
+  "选择年份、月份和两位新人生肖，系统会避开相冲日期，再向注册中心确认开放时段。":
+    "Choose the year, month and both partners’ zodiac signs. The system will avoid clashing dates before you confirm availability with the centre.",
+  计划年份: "Preferred Year",
+  计划月份: "Preferred Month",
+  新人生肖: "Couple’s Zodiac Signs",
+  新人一: "Partner One",
+  新人二: "Partner Two",
   不提供: "Prefer Not to Say",
   一月: "January",
   二月: "February",
@@ -124,19 +110,30 @@ const zhToEn: Record<string, string> = {
   七月: "July",
   八月: "August",
   九月: "September",
+  十月: "October",
+  十一月: "November",
+  十二月: "December",
+  偏好周末: "Prefer Weekend",
+  偏好平日: "Prefer Weekday",
+  无特别偏好: "No Preference",
   通胜宜嫁娶: "Suitable for Marriage",
   周末好日子: "Weekend Wedding Date",
   "颜色说明（不是选择按钮）": "Colour Guide (Not Selection Buttons)",
   "请在下方月历点击带有 ♡ 或 ✦ 的粉红色日期。":
     "Tap a pink date marked ♡ or ✦ in the calendar below.",
+  "请点击带有 ♡ 或 ✦ 的粉红色日期。":
+    "Tap a pink date marked ♡ or ✦.",
+  "已自动隐藏与新人生肖相冲的日期。":
+    "Dates that clash with either partner’s zodiac sign are automatically hidden.",
   "✦ 通胜宜嫁娶 · 周末": "✦ SUITABLE FOR MARRIAGE · WEEKEND",
   "♡ 通胜宜嫁娶": "♡ SUITABLE FOR MARRIAGE",
   避忌生肖: "Clashing Zodiac",
-  "请向陈氏书院婚姻注册中心查询及确认":
+  请向陈氏书院婚姻注册中心查询及确认:
     "Please enquire with the Chan Clan Association Marriage Registration Centre",
   "查询注册时段 ♡": "Check Registration Sessions ♡",
   当天通胜详情: "Daily Almanac Details",
-  "选择其他日期，资料会即时更新": "Choose another date to update these details instantly",
+  "选择其他日期，资料会即时更新":
+    "Choose another date to update these details instantly",
   公历日期: "Gregorian Date",
   农历日期: "Lunar Date",
   星期: "Weekday",
@@ -148,18 +145,19 @@ const zhToEn: Record<string, string> = {
   平日好日子: "Weekday Wedding Date",
   宜: "Suitable",
   嫁娶: "Marriage",
-  "传统通胜标示为适合结婚、举行婚礼的参考日期。": "The traditional almanac marks this as a reference date suitable for marriage and wedding ceremonies.",
+  "传统通胜标示为适合结婚、举行婚礼的参考日期。":
+    "The traditional almanac marks this as a reference date suitable for marriage and wedding ceremonies.",
   冲: "Clash",
   煞: "Direction",
   当天通胜显示: "The daily almanac shows",
   "相关生肖可自行考虑或咨询专业择日人士。":
     "Couples concerned about the related zodiac may consider another date or consult a professional.",
-  "与你选择的新人生肖相冲，建议另选日期或咨询专业择日人士。": "This clashes with the selected zodiac. Consider another date or consult a professional date-selection practitioner.",
-  "所选新人生肖没有与当天冲煞生肖相同。": "The selected zodiac does not match the day’s clashing zodiac.",
   忌与吉时: "Restrictions & Auspicious Hours",
-  "本资料源只核对「宜嫁娶」及生肖冲煞；其他宜忌、吉神凶神、彭祖百忌和吉时，应查阅当天完整通胜或由专业择日人士进一步确认。": "This source verifies only suitability for marriage and the zodiac clash. Consult the complete daily almanac or a professional for other activities, auspicious and inauspicious influences, Peng Zu taboos and auspicious hours.",
+  "本资料源只核对「宜嫁娶」及生肖冲煞；其他宜忌、吉神凶神、彭祖百忌和吉时，应查阅当天完整通胜或由专业择日人士进一步确认。":
+    "This source verifies only suitability for marriage and the zodiac clash. Consult the complete daily almanac or a professional for other activities, auspicious and inauspicious influences, Peng Zu taboos and auspicious hours.",
   注册提醒: "Registration Reminder",
-  "通胜好日子不等同注册中心开放日期，请另外查询陈氏书院婚姻注册中心的实际时段。": "An auspicious almanac date does not mean the registration centre is open. Please confirm the actual sessions separately.",
+  "通胜好日子不等同注册中心开放日期，请另外查询陈氏书院婚姻注册中心的实际时段。":
+    "An auspicious almanac date does not mean the registration centre is open. Please confirm the actual sessions separately.",
   南: "South",
   东: "East",
   北: "North",
