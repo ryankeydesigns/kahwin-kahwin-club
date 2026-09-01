@@ -5,7 +5,7 @@ export default function About() {
     <main>
       <SiteHeader />
       <PageHero
-        variant="registration"
+        variant="about"
         eyebrow="ABOUT THE CENTRE"
         title="关于陈氏书院婚姻注册中心"
       >

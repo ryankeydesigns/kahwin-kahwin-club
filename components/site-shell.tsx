@@ -103,7 +103,7 @@ export function SiteHeader() {
       <HeartAtmosphere />
       <nav className="nav">
         <a className="brand" href="/">
-          <img src="/site-logo.svg" alt="KK" />
+          <img src="/site-logo-heart-v2.svg" alt="KK" />
           <span className="brandcopy">
             <strong>Kahwin-Kahwin.club</strong>
             <small>陈氏书院婚姻注册中心</small>
@@ -143,7 +143,7 @@ export function SiteFooter() {
   return (
     <footer>
       <a className="brand" href="/">
-        <img src="/site-logo.svg" alt="KK" />
+        <img src="/site-logo-heart-v2.svg" alt="KK" />
         Kahwin-Kahwin.club
       </a>
       <p>Registration × AI × Wedding Dates × Wedding Marketplace</p>
@@ -166,7 +166,7 @@ export function PageHero({
 }: {
   eyebrow: string;
   title: string;
-  variant: "registration" | "details" | "partners";
+  variant: "registration" | "about" | "details" | "contact" | "partners";
   children?: React.ReactNode;
 }) {
   return (

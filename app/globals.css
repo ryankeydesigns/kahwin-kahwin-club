@@ -82,8 +82,10 @@ body {
   bottom: max(24px, env(safe-area-inset-bottom));
   display: inline-flex;
   align-items: center;
-  gap: 9px;
-  padding: 13px 17px;
+  width: 58px;
+  height: 58px;
+  justify-content: center;
+  padding: 0;
   border: 1px solid #ffffffa6;
   border-radius: 999px;
   background: linear-gradient(135deg, var(--pink), var(--rose));
@@ -97,9 +99,12 @@ body {
     box-shadow 0.25s ease;
 }
 .assistant-fab svg {
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
   flex: 0 0 auto;
+}
+.assistant-fab span {
+  display: none;
 }
 .assistant-fab:hover {
   transform: translateY(-4px);
@@ -125,10 +130,7 @@ body {
   flex-direction: column;
   text-align: center;
   padding: 140px 20px 70px;
-  background:
-    radial-gradient(circle at 20% 30%, #f8dde4e6, transparent 30%),
-    radial-gradient(circle at 83% 65%, #efa9b840, transparent 26%),
-    linear-gradient(145deg, #fff 0%, var(--blush) 48%, var(--ivory) 100%);
+  background-color: var(--blush);
 }
 .blossom {
   position: absolute;
@@ -951,11 +953,12 @@ footer small {
   .assistant-fab {
     right: max(14px, env(safe-area-inset-right));
     bottom: max(14px, env(safe-area-inset-bottom));
-    padding: 12px;
+    width: 52px;
+    height: 52px;
+    padding: 0;
   }
   .assistant-fab span {
-    max-width: 118px;
-    line-height: 1.15;
+    display: none;
   }
   .chatstream {
     max-height: 52vh;
@@ -1025,8 +1028,14 @@ footer small {
 .pagehero-registration {
   background-image: url("/images/registration-hero.jpg");
 }
+.pagehero-about {
+  background-image: url("/images/about-centre-hero-v2.webp");
+}
 .pagehero-details {
   background-image: url("/images/date-contact-hero.jpg");
+}
+.pagehero-contact {
+  background-image: url("/images/contact-hero-v2.jpg");
 }
 .pagehero-partners {
   background-image: url("/images/partners-hero.jpg");
@@ -1774,7 +1783,7 @@ html[lang="en"] .hero-title-single {
       #fff8f440 72%,
       #fff8f414 100%
     ),
-    url("/images/wedding-hero.png");
+    url("/images/wedding-home-v2.webp");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
