@@ -1034,7 +1034,7 @@ footer small {
 
 @media (max-width: 700px) {
   .pagehero::before {
-    background: rgba(255, 246, 246, 0.62);
+    background: rgba(255, 246, 246, 0.4);
   }
 }
 
@@ -1046,10 +1046,7 @@ footer small {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background:
-    radial-gradient(circle at 15% 45%, #f8dde4, transparent 28%),
-    radial-gradient(circle at 85% 60%, #efa9b83d, transparent 24%),
-    linear-gradient(145deg, #fff, var(--blush), var(--ivory));
+  background-color: var(--blush);
 }
 .pagehero > span {
   font-size: 12px;
@@ -1772,10 +1769,10 @@ html[lang="en"] .hero-title-single {
   background-image:
     linear-gradient(
       90deg,
-      #fff8f4e8 0%,
-      #fff2f5d9 45%,
-      #fff8f48f 72%,
-      #fff8f438 100%
+      #fff8f48a 0%,
+      #fff2f573 45%,
+      #fff8f440 72%,
+      #fff8f414 100%
     ),
     url("/images/wedding-hero.png");
   background-size: cover;
@@ -1791,11 +1788,11 @@ html[lang="en"] .hero-title-single {
   background:
     radial-gradient(
       circle at 50% 43%,
-      #fffaf7c7 0%,
-      #fff3f5a3 31%,
+      #fffaf761 0%,
+      #fff3f538 31%,
       transparent 62%
     ),
-    linear-gradient(180deg, #fff8f43d 0%, transparent 58%, #fff8f4b8 100%);
+    linear-gradient(180deg, #fff8f426 0%, transparent 58%, #fff8f45c 100%);
 }
 .hero > * {
   position: relative;
@@ -1813,11 +1810,20 @@ html[lang="en"] .hero-title-single {
   .hero:before {
     background: linear-gradient(
       180deg,
-      #fff8f4ba 0%,
-      #fff2f5d1 48%,
-      #fff8f4df 100%
+      #fff8f466 0%,
+      #fff2f578 48%,
+      #fff8f48f 100%
     );
   }
+}
+
+/* Hide any legacy or host-injected back-to-top control. */
+.scroll-to-top,
+.back-to-top,
+#scroll-to-top,
+#back-to-top,
+[data-scroll-top] {
+  display: none !important;
 }
 
 /* Balanced headings: keep desktop and mobile titles to clean one- or two-line blocks. */

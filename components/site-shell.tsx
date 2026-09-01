@@ -37,6 +37,36 @@ function HeartAtmosphere() {
     window.addEventListener("pointermove", move, { passive: true });
     return () => window.removeEventListener("pointermove", move);
   }, []);
+
+  useEffect(() => {
+    const removeUnknownTopArrow = () => {
+      document
+        .querySelectorAll<HTMLElement>("body > a, body > button")
+        .forEach((element) => {
+          const text = (element.textContent || "").trim();
+          const label = [
+            text,
+            element.getAttribute("aria-label") || "",
+            element.getAttribute("title") || "",
+          ]
+            .join(" ")
+            .toLowerCase();
+          const rect = element.getBoundingClientRect();
+          const isTopArrow =
+            /^(↑|⇧|↥|⬆)$/.test(text) ||
+            /back.?to.?top|scroll.?to.?top|返回顶部|回到顶部/.test(label);
+
+          if (isTopArrow && rect.left < 48 && rect.top < 48) {
+            element.remove();
+          }
+        });
+    };
+
+    removeUnknownTopArrow();
+    const observer = new MutationObserver(removeUnknownTopArrow);
+    observer.observe(document.body, { childList: true });
+    return () => observer.disconnect();
+  }, []);
   const floaters = [
     { s: "♡", x: 5, y: 18, z: 18, d: 0 },
     { s: "❤", x: 13, y: 70, z: 12, d: 2 },
@@ -73,7 +103,7 @@ export function SiteHeader() {
       <HeartAtmosphere />
       <nav className="nav">
         <a className="brand" href="/">
-          <img src="/site-logo.svg?v=20260831-heart" alt="Kahwin-Kahwin.club heart logo" />
+          <img src="/site-logo.svg" alt="KK" />
           <span className="brandcopy">
             <strong>Kahwin-Kahwin.club</strong>
             <small>陈氏书院婚姻注册中心</small>
@@ -113,7 +143,7 @@ export function SiteFooter() {
   return (
     <footer>
       <a className="brand" href="/">
-        <img src="/site-logo.svg?v=20260831-heart" alt="Kahwin-Kahwin.club heart logo" />
+        <img src="/site-logo.svg" alt="KK" />
         Kahwin-Kahwin.club
       </a>
       <p>Registration × AI × Wedding Dates × Wedding Marketplace</p>
@@ -136,7 +166,7 @@ export function PageHero({
 }: {
   eyebrow: string;
   title: string;
-  variant: "registration" | "assistant" | "details" | "partners" | "contact";
+  variant: "registration" | "details" | "partners";
   children?: React.ReactNode;
 }) {
   return (
