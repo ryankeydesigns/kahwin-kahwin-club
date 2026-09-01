@@ -9,12 +9,12 @@ import {
 } from "lucide-react";
 import { PageHero, SiteFooter, SiteHeader } from "@/components/site-shell";
 const cats = [
-  [Camera, "摄影与录影"],
-  [Palette, "婚纱与化妆"],
-  [UtensilsCrossed, "餐厅与婚宴"],
-  [Flower2, "花艺与布置"],
-  [Gem, "珠宝与婚礼礼物"],
-  [Mic2, "司仪与娱乐"],
+  [Camera, "摄影与录影", "service-photo-1"],
+  [Palette, "婚纱与化妆", "service-photo-2"],
+  [UtensilsCrossed, "餐厅与婚宴", "service-photo-3"],
+  [Flower2, "花艺与布置", "service-photo-4"],
+  [Gem, "珠宝与婚礼礼物", "service-photo-5"],
+  [Mic2, "司仪与娱乐", "service-photo-6"],
 ];
 export default function Partners() {
   return (
@@ -48,11 +48,20 @@ export default function Partners() {
           <h2>合作商家类别</h2>
         </div>
         <div className="catgrid">
-          {cats.map(([Icon, n]: any) => (
-            <div key={n}>
-              <Icon />
-              <b>{n}</b>
-              <span>AI 可按预算与日期推荐</span>
+          {cats.map(([Icon, n, photoClass]: any) => (
+            <div className="service-category" key={n}>
+              <div
+                className={`service-photo ${photoClass}`}
+                role="img"
+                aria-label={`${n}婚礼服务图片`}
+              />
+              <div className="service-category-copy">
+                <span className="service-category-icon">
+                  <Icon />
+                </span>
+                <b>{n}</b>
+                <span>AI 可按预算与日期推荐</span>
+              </div>
             </div>
           ))}
         </div>
