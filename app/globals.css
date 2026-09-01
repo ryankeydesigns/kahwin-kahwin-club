@@ -1290,14 +1290,14 @@ footer small {
   color: var(--muted);
 }
 .service-photo {
-  height: 185px;
+  aspect-ratio: 16 / 9;
   background-image:
     linear-gradient(to top, #4f30363d, transparent 42%),
     url("/images/wedding-services-atlas.webp");
   background-repeat: no-repeat;
   background-size:
     100% 100%,
-    300% 200%;
+    300% auto;
   transition:
     background-size 0.55s ease,
     filter 0.35s ease;
@@ -1305,32 +1305,32 @@ footer small {
 .service-photo-1 {
   background-position:
     center,
-    0 0;
+    0 16%;
 }
 .service-photo-2 {
   background-position:
     center,
-    50% 0;
+    50% 16%;
 }
 .service-photo-3 {
   background-position:
     center,
-    100% 0;
+    100% 16%;
 }
 .service-photo-4 {
   background-position:
     center,
-    0 100%;
+    0 84%;
 }
 .service-photo-5 {
   background-position:
     center,
-    50% 100%;
+    50% 84%;
 }
 .service-photo-6 {
   background-position:
     center,
-    100% 100%;
+    100% 84%;
 }
 .service-category-copy {
   position: relative;
@@ -1359,7 +1359,7 @@ footer small {
 .service-category:hover .service-photo {
   background-size:
     100% 100%,
-    312% 208%;
+    312% auto;
   filter: saturate(1.06) brightness(1.02);
 }
 .contactgrid {
@@ -1452,9 +1452,6 @@ footer small {
   }
   .infocards {
     grid-template-columns: 1fr;
-  }
-  .service-photo {
-    height: min(58vw, 260px);
   }
 }
 .hero-title-single {
