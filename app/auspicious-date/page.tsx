@@ -317,17 +317,13 @@ export default function DatePage() {
               })}
             </div>
             <div className="legend">
-              <b>颜色说明（不是选择按钮）</b>
+              <b>颜色说明</b>
               <span>
                 <i className="high" /> 通胜宜嫁娶
               </span>
               <span>
                 <i className="recommended" /> 周末好日子
               </span>
-              <p>请点击带有 ♡ 或 ✦ 的粉红色日期。</p>
-              {(zodiacOne || zodiacTwo) && (
-                <p>已自动隐藏与新人生肖相冲的日期。</p>
-              )}
             </div>
           </div>
           <div className="dateinfo">
@@ -423,15 +419,7 @@ export default function DatePage() {
             日期根据传统通胜「宜嫁娶」资料整理，仅供民俗文化与一般参考，并非专业命理择日，也不代表任何结果保证。冲煞资料不等同个人八字合婚；注册日期及时间以陈氏书院婚姻注册中心最终确认为准。
           </p>
           <p className="date-source">
-            参考资料：
-            <a
-              href="https://hongkong.regenthotels.com/zh-hans/auspicious-wedding-dates-2026-2027-plan-your-perfect-hong-kong-celebration/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              2026–2027 传统通胜结婚日期整理
-            </a>{" "}
-            · 2028–2029《结婚吉日一览》（用户提供资料）{" "}
+            参考资料：2026–2029《结婚吉日一览》（用户 RyanKey 提供资料）{" "}
             · 最后核对：2026年8月31日
           </p>
           </div>

@@ -158,13 +158,9 @@ const zhToEn: Record<string, string> = {
   无特别偏好: "No Preference",
   通胜宜嫁娶: "Suitable for Marriage",
   周末好日子: "Weekend Wedding Date",
-  "颜色说明（不是选择按钮）": "Colour Guide (Not Selection Buttons)",
+  颜色说明: "Colour Guide",
   "请在下方月历点击带有 ♡ 或 ✦ 的粉红色日期。":
     "Tap a pink date marked ♡ or ✦ in the calendar below.",
-  "请点击带有 ♡ 或 ✦ 的粉红色日期。":
-    "Tap a pink date marked ♡ or ✦.",
-  "已自动隐藏与新人生肖相冲的日期。":
-    "Dates that clash with either partner’s zodiac sign are automatically hidden.",
   "✦ 通胜宜嫁娶 · 周末": "✦ SUITABLE FOR MARRIAGE · WEEKEND",
   "♡ 通胜宜嫁娶": "♡ SUITABLE FOR MARRIAGE",
   避忌生肖: "Clashing Zodiac",
@@ -205,10 +201,8 @@ const zhToEn: Record<string, string> = {
   "日期根据传统通胜「宜嫁娶」资料整理，仅供民俗文化与一般参考，并非专业命理择日，也不代表任何结果保证。冲煞资料不等同个人八字合婚；注册日期及时间以陈氏书院婚姻注册中心最终确认为准。":
     "Dates are compiled from traditional almanac references marked suitable for marriage. They are for cultural and general reference only, not professional date selection or a guarantee of outcomes. Clash details are not a personal birth-chart assessment; registration dates and times remain subject to final confirmation by the centre.",
   参考资料: "Reference",
-  "2026–2027 传统通胜结婚日期整理":
-    "2026–2027 Traditional Almanac Wedding Date Reference",
-  "2028–2029《结婚吉日一览》（用户提供资料）":
-    "2028–2029 Wedding Date List (User-Provided Reference)",
+  "2026–2029《结婚吉日一览》（用户 RyanKey 提供资料）":
+    "2026–2029 Wedding Date List (Reference Provided by RyanKey)",
   "最后核对：2026年8月31日": "Last reviewed: 31 August 2026",
   星期日: "Sunday",
   星期一: "Monday",
