@@ -168,6 +168,18 @@ export default function DatePage() {
       day: "numeric",
     }).format(selectedDate);
   const clashDetail = clashDetails[selectedInfo.clash];
+  const whatsappMessage = [
+    "您好，我想查询陈氏书院婚姻注册中心的注册时段。",
+    "",
+    `计划年份：${year}`,
+    `计划月份：${monthNames[month - 1]}`,
+    `新人一生肖：${zodiacOne || "未选择"}`,
+    `新人二生肖：${zodiacTwo || "未选择"}`,
+    `选择的结婚好日子：${year}年${month}月${selectedInfo.day}日（${weekday}）`,
+    "",
+    "请问当天有哪些可预约的注册时段？谢谢。",
+  ].join("\n");
+  const whatsappHref = `https://wa.me/60127740280?text=${encodeURIComponent(whatsappMessage)}`;
 
   function previousMonth() {
     const index = availableYears.indexOf(year) * 12 + month - 1;
@@ -236,11 +248,7 @@ export default function DatePage() {
                 >
                   <option value="">新人一</option>
                   {zodiacOptions.map((zodiac) => (
-                    <option
-                      value={zodiac}
-                      key={zodiac}
-                      disabled={zodiac === zodiacTwo}
-                    >
+                    <option value={zodiac} key={zodiac}>
                       {zodiac}
                     </option>
                   ))}
@@ -252,11 +260,7 @@ export default function DatePage() {
                 >
                   <option value="">新人二</option>
                   {zodiacOptions.map((zodiac) => (
-                    <option
-                      value={zodiac}
-                      key={zodiac}
-                      disabled={zodiac === zodiacOne}
-                    >
+                    <option value={zodiac} key={zodiac}>
                       {zodiac}
                     </option>
                   ))}
@@ -413,7 +417,14 @@ export default function DatePage() {
                 </p>
               </div>
             </section>
-            <a href="/contact">查询注册时段 ♡</a>
+            <a
+              href={whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="使用 WhatsApp 查询所选日期的注册时段"
+            >
+              查询注册时段 ♡
+            </a>
           </div>
           <p className="disclaimer">
             日期根据传统通胜「宜嫁娶」资料整理，仅供民俗文化与一般参考，并非专业命理择日，也不代表任何结果保证。冲煞资料不等同个人八字合婚；注册日期及时间以陈氏书院婚姻注册中心最终确认为准。
