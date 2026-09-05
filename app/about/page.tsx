@@ -7,7 +7,7 @@ export default function About() {
       <PageHero
         variant="about"
         eyebrow="ABOUT THE CENTRE"
-        title="关于陈氏书院婚姻注册中心"
+        title="关于婚姻注册服务"
       >
         <p>为新人提供温馨、庄重而清楚的婚姻注册体验。</p>
       </PageHero>
@@ -26,7 +26,7 @@ export default function About() {
             <div>
               <MapPin />
               <b>注册地点</b>
-              <span>陈氏书院婚姻注册中心</span>
+              <span>资料确认后更新</span>
             </div>
             <div>
               <Clock />
