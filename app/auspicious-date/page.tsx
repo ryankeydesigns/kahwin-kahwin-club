@@ -169,7 +169,7 @@ export default function DatePage() {
     }).format(selectedDate);
   const clashDetail = clashDetails[selectedInfo.clash];
   const whatsappMessage = [
-    "您好，我想查询陈氏书院婚姻注册中心的注册时段。",
+    "您好，我想查询婚姻注册时段。",
     "",
     `计划年份：${year}`,
     `计划月份：${monthNames[month - 1]}`,
@@ -343,7 +343,7 @@ export default function DatePage() {
             </p>
             <div className="tongsheng-note">
               <b>注册时段</b>
-              <span>请向陈氏书院婚姻注册中心查询及确认</span>
+              <span>请向注册中心查询及确认</span>
             </div>
             <section className="almanac-detail" aria-live="polite">
               <div className="almanac-detail-head">
@@ -412,7 +412,7 @@ export default function DatePage() {
                 <p>
                   <b>注册提醒</b>
                   <span>
-                    通胜好日子不等同注册中心开放日期，请另外查询陈氏书院婚姻注册中心的实际时段。
+                    通胜好日子不等同注册中心开放日期，请另外查询实际开放时段。
                   </span>
                 </p>
               </div>
@@ -427,7 +427,7 @@ export default function DatePage() {
             </a>
           </div>
           <p className="disclaimer">
-            日期根据传统通胜「宜嫁娶」资料整理，仅供民俗文化与一般参考，并非专业命理择日，也不代表任何结果保证。冲煞资料不等同个人八字合婚；注册日期及时间以陈氏书院婚姻注册中心最终确认为准。
+            日期根据传统通胜「宜嫁娶」资料整理，仅供民俗文化与一般参考，并非专业命理择日，也不代表任何结果保证。冲煞资料不等同个人八字合婚；注册日期及时间以注册中心最终确认为准。
           </p>
           <p className="date-source">
             参考资料：2026–2029《结婚吉日一览》（用户 RyanKey 提供资料）{" "}
