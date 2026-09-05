@@ -14,7 +14,7 @@ export default function Contact() {
       <section className="contactgrid section">
         <div className="contactcard">
           <span className="kicker">MARRIAGE REGISTRATION</span>
-          <h2>陈氏书院婚姻注册中心</h2>
+          <h2>婚姻注册服务咨询</h2>
           <div className="contactrows">
             <p>
               <MapPin />
