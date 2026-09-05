@@ -13,7 +13,7 @@ export default function Home() {
       <section className="hero">
         <div className="blossom one">♡</div>
         <div className="blossom two">✦</div>
-        <div className="eyebrow">陈氏书院婚姻注册中心</div>
+        <div className="eyebrow">REGISTRATION × AI × WEDDING</div>
         <h1 className="hero-title-single">从「我要注册结婚」开始</h1>
         <p>
           婚姻注册、结婚好日子、婚礼服务，
