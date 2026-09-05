@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[97367,["/_next/static/chunks/0dbhjjzl8qfwv.js"],"ViewportBoundary"]
+3:I[97367,["/_next/static/chunks/0dbhjjzl8qfwv.js"],"MetadataBoundary"]
+4:"$Sreact.suspense"
+5:I[27201,["/_next/static/chunks/0dbhjjzl8qfwv.js"],"IconMark"]
+0:{"rsc":["$","$1","h",{"children":[["$","meta",null,{"name":"robots","content":"noindex"}],["$","$L2",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","div",null,{"hidden":true,"children":["$","$L3",null,{"children":["$","$4",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Kahwin-Kahwin.club｜AI 婚姻注册与婚礼服务平台"}],["$","meta","1",{"name":"description","content":"婚姻注册、AI Wedding Assistant、结婚好日子与婚礼服务，一个平台帮您准备。"}],["$","meta","2",{"name":"keywords","content":"Marriage Registration Malaysia,Marriage Registration Kuala Lumpur,Tong Sheng Wedding Date,Wedding Services Malaysia,Kahwin-Kahwin"}],["$","link","3",{"rel":"shortcut icon","href":"/site-logo-heart-v2.svg"}],["$","link","4",{"rel":"icon","href":"/site-logo-heart-v2.svg"}],["$","link","5",{"rel":"apple-touch-icon","href":"/site-logo-heart-v2.svg"}],["$","$L5","6",{}]]}]}]}],null]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"SvKc1hA0ppNeRtFrBJgqf"}
