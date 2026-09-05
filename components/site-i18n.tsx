@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 type Lang = "zh" | "en";
 
 const zhToEn: Record<string, string> = {
-  陈氏书院婚姻注册中心: "Chan Clan Association Marriage Registration Centre",
   首页: "Home",
   关于中心: "About",
   注册询问: "Registration Help",
@@ -38,8 +37,7 @@ const zhToEn: Record<string, string> = {
   了解怎样注册: "Learn how to register",
   寻找适合日期: "Find a suitable date",
   配对婚礼商家: "Match with wedding vendors",
-  关于陈氏书院婚姻注册中心:
-    "About the Chan Clan Association Marriage Registration Centre",
+  关于婚姻注册服务: "About Marriage Registration Services",
   "为新人提供温馨、庄重而清楚的婚姻注册体验。":
     "A warm, dignified and clear marriage registration experience for every couple.",
   "让注册这一刻，": "Make the moment of registration",
@@ -113,8 +111,8 @@ const zhToEn: Record<string, string> = {
     "Demo reply ♡ The system can suggest live bands, singers, dance, magic and interactive performances. Content and quotations require vendor confirmation.",
   "您好 ♡ 我是 Kahwin-Kahwin AI Wedding Assistant。我可以帮您了解注册程序、寻找适合日期，以及推荐婚礼服务。":
     "Hello ♡ I’m the Kahwin-Kahwin AI Wedding Assistant. I can explain the registration process, help find suitable dates and recommend wedding services.",
-  "这项资料目前还没有在系统资料库中，建议直接联系陈氏书院婚姻注册中心确认。":
-    "This information is not yet available in our knowledge base. Please contact the Chan Clan Association Marriage Registration Centre for confirmation.",
+  "这项资料目前还没有在系统资料库中，建议直接联系中心确认。":
+    "This information is not yet available in our knowledge base. Please contact the centre for confirmation.",
   "您可以进入结婚好日子页面，按年份、月份与平日／周末偏好筛选。系统只使用经过核对的通胜参考资料。":
     "Visit the Wedding Dates page and filter by year, month and weekday or weekend preference. The system uses reviewed traditional almanac references.",
   "您可以进入结婚好日子页面，按年份、月份与两位新人生肖筛选。系统只使用经过核对的通胜参考资料。":
@@ -164,8 +162,8 @@ const zhToEn: Record<string, string> = {
   "✦ 通胜宜嫁娶 · 周末": "✦ SUITABLE FOR MARRIAGE · WEEKEND",
   "♡ 通胜宜嫁娶": "♡ SUITABLE FOR MARRIAGE",
   避忌生肖: "Clashing Zodiac",
-  请向陈氏书院婚姻注册中心查询及确认:
-    "Please enquire with the Chan Clan Association Marriage Registration Centre",
+  请向注册中心查询及确认:
+    "Please enquire with the registration centre",
   "查询注册时段 ♡": "Check Registration Sessions ♡",
   当天通胜详情: "Daily Almanac Details",
   "选择其他日期，资料会即时更新":
@@ -192,13 +190,13 @@ const zhToEn: Record<string, string> = {
   "本资料源只核对「宜嫁娶」及生肖冲煞；其他宜忌、吉神凶神、彭祖百忌和吉时，应查阅当天完整通胜或由专业择日人士进一步确认。":
     "This source verifies only suitability for marriage and the zodiac clash. Consult the complete daily almanac or a professional for other activities, auspicious and inauspicious influences, Peng Zu taboos and auspicious hours.",
   注册提醒: "Registration Reminder",
-  "通胜好日子不等同注册中心开放日期，请另外查询陈氏书院婚姻注册中心的实际时段。":
+  "通胜好日子不等同注册中心开放日期，请另外查询实际开放时段。":
     "An auspicious almanac date does not mean the registration centre is open. Please confirm the actual sessions separately.",
   南: "South",
   东: "East",
   北: "North",
   西: "West",
-  "日期根据传统通胜「宜嫁娶」资料整理，仅供民俗文化与一般参考，并非专业命理择日，也不代表任何结果保证。冲煞资料不等同个人八字合婚；注册日期及时间以陈氏书院婚姻注册中心最终确认为准。":
+  "日期根据传统通胜「宜嫁娶」资料整理，仅供民俗文化与一般参考，并非专业命理择日，也不代表任何结果保证。冲煞资料不等同个人八字合婚；注册日期及时间以注册中心最终确认为准。":
     "Dates are compiled from traditional almanac references marked suitable for marriage. They are for cultural and general reference only, not professional date selection or a guarantee of outcomes. Clash details are not a personal birth-chart assessment; registration dates and times remain subject to final confirmation by the centre.",
   参考资料: "Reference",
   "2026–2029《结婚吉日一览》（用户 RyanKey 提供资料）":
