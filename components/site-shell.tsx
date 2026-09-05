@@ -106,7 +106,6 @@ export function SiteHeader() {
           <img src="/site-logo-heart-v2.svg" alt="KK" />
           <span className="brandcopy">
             <strong>Kahwin-Kahwin.club</strong>
-            <small>陈氏书院婚姻注册中心</small>
           </span>
         </a>
         <div className={open ? "navlinks open" : "navlinks"}>
@@ -154,7 +153,7 @@ export function SiteFooter() {
           </a>
         ))}
       </div>
-      <small>© 2026 Kahwin-Kahwin.club · 陈氏书院婚姻注册中心</small>
+      <small>© 2026 Kahwin-Kahwin.club</small>
     </footer>
   );
 }
