@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 export const metadata: Metadata = {
-  title: "Kahwin-Kahwin.club｜AI 婚姻注册与婚礼服务平台",
+  title: "Kahwin-Kahwin.club｜陈氏书院婚姻注册中心",
   applicationName: "Kahwin-Kahwin.club",
   creator: "Kahwin-Kahwin.club",
   description:
