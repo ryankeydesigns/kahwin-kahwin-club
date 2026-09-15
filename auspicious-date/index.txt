@@ -1,0 +1,21 @@
+1:"$Sreact.fragment"
+2:I[39756,["/_next/static/chunks/0dbhjjzl8qfwv.js"],"default"]
+3:I[37457,["/_next/static/chunks/0dbhjjzl8qfwv.js"],"default"]
+4:I[47257,["/_next/static/chunks/0dbhjjzl8qfwv.js"],"ClientPageRoot"]
+5:I[94780,["/_next/static/chunks/0dbhjjzl8qfwv.js","/_next/static/chunks/0j7i5e4s3qfvd.js"],"default"]
+8:I[97367,["/_next/static/chunks/0dbhjjzl8qfwv.js"],"OutletBoundary"]
+9:"$Sreact.suspense"
+c:I[97367,["/_next/static/chunks/0dbhjjzl8qfwv.js"],"ViewportBoundary"]
+e:I[97367,["/_next/static/chunks/0dbhjjzl8qfwv.js"],"MetadataBoundary"]
+10:I[68027,["/_next/static/chunks/0dbhjjzl8qfwv.js"],"default",1]
+:HL["/_next/static/chunks/1668sn-qwq2lb.css","style"]
+:HL["/site-logo-heart-v2.svg","image"]
+0:{"P":null,"c":["","auspicious-date",""],"q":"","i":false,"f":[[["",{"children":["auspicious-date",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/1668sn-qwq2lb.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/0dbhjjzl8qfwv.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"zh-Hans","children":["$","body",null,{"children":["$","main",null,{"className":"maintenance-page","children":["$","div",null,{"className":"maintenance-card","role":"status","aria-live":"polite","children":[["$","img",null,{"className":"maintenance-logo","src":"/site-logo-heart-v2.svg","alt":"Kahwin-Kahwin.club"}],["$","p",null,{"className":"maintenance-label","children":"KAHWIN-KAHWIN.CLUB"}],["$","h1",null,{"children":"网站正在维修中"}],["$","p",null,{"className":"maintenance-en","children":"Website under maintenance"}],["$","div",null,{"className":"maintenance-line","aria-hidden":"true"}],["$","p",null,{"className":"maintenance-message","children":["我们正在进行系统维护，请稍后再回来。",["$","br",null,{}],"谢谢您的耐心等候。"]}]]}]}]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[["$","$L4",null,{"Component":"$5","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@6","$@7"]}}],[["$","script","script-0",{"src":"/_next/static/chunks/0j7i5e4s3qfvd.js","async":true,"nonce":"$undefined"}]],["$","$L8",null,{"children":["$","$9",null,{"name":"Next.MetadataOutlet","children":"$@a"}]}]]}],{},null,false,null]},null,false,"$@b"]},null,false,null],["$","$1","h",{"children":[null,["$","$Lc",null,{"children":"$Ld"}],["$","div",null,{"hidden":true,"children":["$","$Le",null,{"children":["$","$9",null,{"name":"Next.Metadata","children":"$Lf"}]}]}],null]}],false]],"m":"$undefined","G":["$10",[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/1668sn-qwq2lb.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"KJZdLTAbJb_rDw98cC24R"}
+11:[]
+b:"$W11"
+6:{}
+7:"$0:f:0:1:1:children:1:children:0:props:children:0:props:serverProvidedParams:params"
+d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+12:I[27201,["/_next/static/chunks/0dbhjjzl8qfwv.js"],"IconMark"]
+a:null
+f:[["$","title","0",{"children":"网站维修中｜Kahwin-Kahwin.club"}],["$","meta","1",{"name":"description","content":"Kahwin-Kahwin.club 正在进行网站维护。"}],["$","meta","2",{"name":"application-name","content":"Kahwin-Kahwin.club"}],["$","meta","3",{"name":"keywords","content":"Marriage Registration Malaysia,Marriage Registration Kuala Lumpur,Tong Sheng Wedding Date,Wedding Services Malaysia,Kahwin-Kahwin"}],["$","meta","4",{"name":"creator","content":"Kahwin-Kahwin.club"}],["$","link","5",{"rel":"shortcut icon","href":"/site-logo-heart-v2.svg"}],["$","link","6",{"rel":"icon","href":"/site-logo-heart-v2.svg"}],["$","link","7",{"rel":"apple-touch-icon","href":"/site-logo-heart-v2.svg"}],["$","$L12","8",{}]]
