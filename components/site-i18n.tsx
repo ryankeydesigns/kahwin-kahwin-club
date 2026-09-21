@@ -2,10 +2,17 @@
 
 import { Languages } from "lucide-react";
 import { useEffect, useState } from "react";
+import {
+  knowledgeBaseTranslations,
+  knowledgeFallbackEn,
+  knowledgeFallbackZh,
+} from "@/lib/knowledge-base";
 
 type Lang = "zh" | "en";
 
 const zhToEn: Record<string, string> = {
+  ...knowledgeBaseTranslations,
+  [knowledgeFallbackZh]: knowledgeFallbackEn,
   马来西亚婚姻注册资讯平台:
     "Malaysia Marriage Registration & Wedding Guide",
   首页: "Home",
@@ -84,34 +91,6 @@ const zhToEn: Record<string, string> = {
   婚礼礼物: "Wedding Gifts",
   寻婚宴找司仪: "Find a Wedding Emcee",
   婚宴当晚娱乐与表演: "Wedding Entertainment & Performances",
-  "这是 Demo 回复 ♡ 正式版本可根据合作商家提供的优惠、有效期和新人需求进行推荐。目前请先联系中心确认最新优惠。":
-    "Demo reply ♡ The full version can recommend offers based on vendor promotions, validity periods and the couple’s needs. Please contact the centre for the latest offers.",
-  "这是 Demo 回复：一般会先确认双方身份证明、照片及相关申请文件；实际清单请以注册中心最新要求为准。":
-    "Demo reply: Identity documents, photos and relevant application forms are generally required. Please follow the registration centre’s latest checklist.",
-  "这是 Demo 回复 ♡ 可以按婚礼日期、地区、风格和预算示范筛选摄影师；目前尚未连接真实商家资料。":
-    "Demo reply ♡ Photographers can be shortlisted by wedding date, area, style and budget. Live vendor data is not connected yet.",
-  "这是 Demo 回复：费用会按注册安排及服务内容而不同，正式金额请向注册中心查询确认。":
-    "Demo reply: Fees vary according to the registration arrangement and services. Please confirm the official amount with the centre.",
-  "这是 Demo 回复：可以前往「结婚好日子」查看通胜参考日期，再向注册中心确认可预约时段。":
-    "Demo reply: Visit Wedding Dates to review almanac reference dates, then confirm available appointment sessions with the centre.",
-  "这是 Demo 回复：可先准备双方基本资料、希望日期与联络方式，再联系注册中心确认预约。":
-    "Demo reply: Prepare both partners’ basic details, preferred date and contact information, then contact the centre to confirm an appointment.",
-  "这是 Demo 回复 ♡ 可按日期、地区、预算和拍摄风格筛选婚宴摄影与录影团队；目前为测试示范。":
-    "Demo reply ♡ Wedding photography and videography teams can be shortlisted by date, area, budget and shooting style. This is a test demonstration.",
-  "这是 Demo 回复 ♡ 可示范介绍婚纱款式、新娘化妆、试妆及造型配套；目前未连接真实商家资料。":
-    "Demo reply ♡ The system can introduce gown styles, bridal makeup, trial makeup and styling packages. Live vendor data is not connected yet.",
-  "这是 Demo 回复：可按地区、桌数、预算和菜式示范筛选婚宴餐厅；实际档期与价格需向商家确认。":
-    "Demo reply: Banquet restaurants can be shortlisted by area, table count, budget and cuisine. Availability and prices must be confirmed with vendors.",
-  "这是 Demo 回复 ♡ 可按婚礼主题、色系、场地和预算示范推荐花艺与布置服务。":
-    "Demo reply ♡ Floral design and styling services can be recommended by wedding theme, colour palette, venue and budget.",
-  "这是 Demo 回复：可示范介绍结婚戒指、龙凤镯及婚嫁金饰类别；价格与库存需向商家确认。":
-    "Demo reply: The system can introduce wedding rings, dragon-and-phoenix bangles and bridal gold jewellery. Prices and stock require vendor confirmation.",
-  "这是 Demo 回复 ♡ 可按宾客人数、预算和婚礼主题示范推荐回礼、喜饼及定制婚礼礼物。":
-    "Demo reply ♡ Favours, wedding pastries and personalised gifts can be recommended by guest count, budget and wedding theme.",
-  "这是 Demo 回复：可按语言、主持风格、婚宴日期和地点示范寻找合适司仪；目前为测试回复。":
-    "Demo reply: Suitable emcees can be shortlisted by language, hosting style, banquet date and venue. This is a test response.",
-  "这是 Demo 回复 ♡ 可示范推荐现场乐队、歌手、舞蹈、魔术及互动表演；实际演出内容与报价需向商家确认。":
-    "Demo reply ♡ The system can suggest live bands, singers, dance, magic and interactive performances. Content and quotations require vendor confirmation.",
   "您好 ♡ 我是 Kahwin-Kahwin AI Wedding Assistant。我可以帮您了解注册程序、寻找适合日期，以及推荐婚礼服务。":
     "Hello ♡ I’m the Kahwin-Kahwin AI Wedding Assistant. I can explain the registration process, help find suitable dates and recommend wedding services.",
   "这项资料目前还没有在系统资料库中，建议通过马来西亚婚姻注册资讯平台查询确认。":
@@ -124,6 +103,8 @@ const zhToEn: Record<string, string> = {
     "Yes ♡ Tell me your budget, date and area, and the system will shortlist suitable services and exclusive offers from our partner vendors.",
   "资料只依据注册中心与合作商家确认的内容，不会自行编造费用、条例或优惠。":
     "Information is based only on content confirmed by the registration centre and partner vendors. Fees, rules and offers are never invented.",
+  "回复优先依据 Knowledge Base 与已确认的合作商家资料；不确定时不会自行编造价格、日期、商家或优惠。":
+    "Replies prioritise the Knowledge Base and verified partner information. Prices, dates, vendors and offers will not be invented when information is uncertain.",
   "寻找结婚好日子 ♡": "Find a Wedding Date ♡",
   "2026–2027 通胜宜嫁娶参考 × 当天通胜详情 × 注册时段确认":
     "2026–2027 Almanac Reference × Daily Details × Registration Confirmation",

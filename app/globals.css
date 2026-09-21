@@ -366,6 +366,7 @@ h1 {
   padding: 19px 22px;
   border-radius: 8px 24px 24px 24px;
   line-height: 1.7;
+  white-space: pre-line;
 }
 .suggestions {
   display: flex;
