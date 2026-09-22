@@ -1112,6 +1112,9 @@ footer .developer-credit:focus-visible {
 }
 .about-vision h2 {
   color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 .about-vision p {
   color: #f7e8ec;
