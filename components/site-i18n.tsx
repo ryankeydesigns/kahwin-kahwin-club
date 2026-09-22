@@ -16,8 +16,8 @@ const zhToEn: Record<string, string> = {
   马来西亚婚姻注册资讯平台:
     "Malaysia Marriage Registration & Wedding Guide",
   首页: "Home",
-  关于中心: "About",
-  注册询问: "Registration Help",
+  关于我们: "About Us",
+  "AI 助手": "AI Assistant",
   结婚好日子: "Wedding Dates",
   商家合作: "Partners",
   联络我们: "Contact",

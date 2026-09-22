@@ -859,6 +859,15 @@ footer p {
 footer small {
   color: #aa8d94;
 }
+footer .developer-credit {
+  color: var(--rose);
+  text-decoration: none;
+  white-space: nowrap;
+}
+footer .developer-credit:hover,
+footer .developer-credit:focus-visible {
+  text-decoration: underline;
+}
 @keyframes float {
   50% {
     transform: translateY(-12px) rotate(8deg);

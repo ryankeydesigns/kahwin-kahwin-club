@@ -5,8 +5,8 @@ import { LanguageToggle } from "@/components/site-i18n";
 
 const links = [
   ["首页", "/"],
-  ["关于中心", "/about"],
-  ["注册询问", "/ai-assistant"],
+  ["关于我们", "/about"],
+  ["AI 助手", "/ai-assistant"],
   ["结婚好日子", "/auspicious-date"],
   ["商家合作", "/partners"],
   ["联络我们", "/contact"],
@@ -154,7 +154,17 @@ export function SiteFooter() {
           </a>
         ))}
       </div>
-      <small>© 2026 Kahwin-Kahwin.club · 马来西亚婚姻注册资讯平台</small>
+      <small>
+        © 2026 Kahwin-Kahwin.club · 马来西亚婚姻注册资讯平台 ·{" "}
+        <a
+          className="developer-credit"
+          href="https://ryankey.com.my/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Developer by Ryankey Designs
+        </a>
+      </small>
     </footer>
   );
 }
