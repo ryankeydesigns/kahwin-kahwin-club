@@ -22,6 +22,91 @@ const zhToEn: Record<string, string> = {
   商家合作: "Partners",
   联络我们: "Contact",
   "开始注册询问 ♡": "Start Registration Help ♡",
+  "让婚姻注册资讯，变得更简单。":
+    "Making Marriage Registration Information Simpler.",
+  "一个为准备结婚的新人而设的一站式婚姻资讯平台。":
+    "A one-stop marriage information platform for couples preparing to marry.",
+  "从婚姻注册流程、所需文件、日期与常见问题，到婚纱、摄影、婚宴、花艺、珠宝、喜饼、司仪及娱乐等婚礼服务，我们希望把原本分散的资讯重新整理，让新人能够更简单、更快速地找到真正需要的内容。":
+    "From marriage registration procedures, required documents, dates and common questions to bridalwear, photography, banquets, florals, jewellery, wedding pastries, emcees and entertainment, we organise scattered information so couples can find what they truly need more simply and quickly.",
+  "结合 AI 助手 × AI Knowledge Base × 婚礼服务资讯，让筹备婚姻这件事，少一点复杂，多一点期待。":
+    "Combining an AI Assistant, AI Knowledge Base and wedding service information to make marriage preparation less complicated and more exciting.",
+  "询问 AI 助手": "Ask the AI Assistant",
+  "结婚已经有很多事情要准备，找资料不应该再这么复杂。":
+    "There is already so much to prepare for a wedding. Finding information should not be this complicated.",
+  "准备注册结婚时，新人往往需要浏览不同网站、询问不同单位，再自行整理各种资料。":
+    "When preparing to register a marriage, couples often need to browse different websites, contact different organisations and organise all the information themselves.",
+  "费用是多少？": "How much does it cost?",
+  "什么日期可以注册？": "Which dates are available for registration?",
+  "怎样预约？": "How do we make an appointment?",
+  "哪里可以找到摄影师、婚纱、婚宴或司仪？":
+    "Where can we find photographers, bridalwear, wedding banquets or emcees?",
+  "因此，我们建立了马来西亚婚姻注册资讯平台，希望把婚姻注册与婚礼筹备相关资讯集中在一个地方，并透过更清楚的内容架构及 AI 技术，让新人更容易找到答案。":
+    "That is why we created the Malaysia Marriage Registration Information Platform: to bring marriage registration and wedding preparation information together in one place, with clearer content and AI technology that make answers easier to find.",
+  "平台的 6 大好处": "6 Key Benefits of the Platform",
+  婚姻注册资讯集中整理: "Organised Marriage Registration Information",
+  "将注册流程、所需文件、日期、费用及常见问题集中整理，减少四处寻找资料的时间。":
+    "Registration procedures, required documents, dates, fees and common questions are organised in one place, reducing the time spent searching across multiple sources.",
+  "AI 智能查询": "AI-Powered Enquiries",
+  "结合 AI 助手与 AI Knowledge Base，让新人可以直接提出问题，更快速找到相关资讯。":
+    "The AI Assistant and AI Knowledge Base let couples ask questions directly and find relevant information faster.",
+  婚礼服务一站式探索: "One-Stop Wedding Service Discovery",
+  "从婚纱、化妆、摄影、录影到婚宴、花艺、珠宝、喜饼、司仪与娱乐，让婚礼筹备更加方便。":
+    "Explore bridalwear, makeup, photography, videography, banquets, florals, jewellery, wedding pastries, emcees and entertainment in one place.",
+  专注马来西亚新人: "Focused on Malaysian Couples",
+  "以马来西亚婚姻注册及本地婚礼需求为核心，持续整理和扩充实用资讯。":
+    "Built around Malaysian marriage registration and local wedding needs, with practical information that continues to grow.",
+  简化繁琐的搜寻过程: "A Simpler Search Experience",
+  "将复杂及分散的内容重新整理，以简单、清楚、容易理解的方式呈现。":
+    "Complex and scattered content is reorganised and presented in a simple, clear and easy-to-understand way.",
+  持续成长的婚礼资讯生态: "A Growing Wedding Information Ecosystem",
+  "未来将连接更多婚礼相关商家、专业人士及服务，让新人拥有更完整的婚姻与婚礼资讯平台。":
+    "The platform will connect more wedding vendors, professionals and services to create a more complete information ecosystem for couples.",
+  "不只是找资料，": "More than finding information,",
+  "你也可以直接问。": "you can ask directly.",
+  "平台结合 AI 助手及 AI Knowledge Base，把大量婚姻注册与婚礼相关资料重新整理。使用者不需要逐页寻找内容，只需要直接提出问题。":
+    "The platform combines an AI Assistant and AI Knowledge Base to organise extensive marriage registration and wedding information. Instead of searching page by page, users can simply ask a question.",
+  "我们的目标，是让 AI 成为新人筹备婚姻过程中的资讯助手，协助使用者更快找到相关资料。":
+    "Our goal is for AI to become an information assistant throughout the marriage preparation journey, helping users find relevant information faster.",
+  "开始询问 AI": "Start Asking AI",
+  "AI 助手问题示例": "Example Questions for the AI Assistant",
+  "注册结婚需要准备什么文件？":
+    "What documents are needed to register a marriage?",
+  "有婚礼摄影师推荐吗？": "Can you recommend a wedding photographer?",
+  "哪里可以找婚宴场地？": "Where can we find a wedding venue?",
+  "不同专业，一起完成一个平台。":
+    "Different expertise, working together to build one platform.",
+  "马来西亚婚姻注册资讯平台由网站开发、设计、AI、市场策略等不同专业领域的成员共同策划与开发。":
+    "The Malaysia Marriage Registration Information Platform is planned and developed by team members across web development, design, AI and marketing strategy.",
+  "我们相信，一个真正实用的平台，不只是把网站做好看，而是让资讯 × 技术 × 设计 × 使用体验真正结合起来。":
+    "We believe a truly useful platform is not just visually appealing; it brings information, technology, design and user experience together.",
+  总开发与设计: "Lead Development & Design",
+  市场策略: "Marketing Strategy",
+  "AI 知识库": "AI Knowledge Base",
+  美术与设计: "Art & Design",
+  网站开发: "Web Development",
+  "负责平台整体规划、网站架构、功能开发、UI/UX 与视觉设计，并统筹平台从概念、技术开发到实际应用的整体方向。":
+    "Leads overall platform planning, website architecture, feature development, UI/UX and visual design, while coordinating the direction from concept and technical development to real-world use.",
+  "负责平台市场定位、推广策略及发展方向，从市场与使用者需求出发，协助建立更清晰的发展模式。":
+    "Oversees market positioning, promotional strategy and development direction, helping establish a clearer growth model based on market and user needs.",
+  "负责 AI Knowledge Base 的资料整理、分类与内容架构，让 AI 助手能够更有效理解及回应使用者的问题。":
+    "Organises, classifies and structures the AI Knowledge Base so the AI Assistant can understand and respond to user questions more effectively.",
+  "负责平台美术方向、视觉元素与设计支援，让整体品牌拥有一致、清晰及友善的视觉体验。":
+    "Supports the platform's art direction, visual elements and design so the brand maintains a consistent, clear and welcoming visual experience.",
+  "负责网站功能开发、页面制作及技术支援，并持续优化网站功能、稳定性及跨装置使用体验。":
+    "Handles website feature development, page production and technical support while continuously improving functionality, stability and the cross-device experience.",
+  "我们想做的，不只是一个网站。": "We want to build more than a website.",
+  "我们希望建立一个真正对新人有帮助的马来西亚婚姻注册资讯平台。":
+    "We want to build a Malaysia marriage registration information platform that genuinely helps couples.",
+  "“我要怎样注册结婚？”": "“How do I register my marriage?”",
+  "到寻找好日子、摄影师、婚纱、婚宴餐厅、花艺、珠宝、喜饼、司仪与婚礼娱乐，我们希望新人在不同筹备阶段，都能够在这里找到适合自己的资讯与服务。":
+    "From finding an auspicious date, photographer, bridalwear or banquet venue to florals, jewellery, wedding pastries, emcees and entertainment, we want couples to find suitable information and services at every stage of preparation.",
+  "未来，我们也会持续结合 AI 技术、婚姻资讯及本地婚礼服务生态，让平台随着新人真正的需要不断成长。":
+    "We will continue combining AI technology, marriage information and the local wedding service ecosystem so the platform grows with the real needs of couples.",
+  "准备结婚，从这里开始。": "Preparing to Marry Starts Here.",
+  "不确定从哪里开始？直接告诉我们的 AI 助手你的问题。":
+    "Not sure where to begin? Tell our AI Assistant your question.",
+  "让结婚少一点繁琐，多一点期待。":
+    "Make marriage preparation less complicated and more exciting.",
   "从「我要注册结婚」开始": "Start with “We Want to Get Married”",
   "婚姻注册、结婚好日子、婚礼服务，":
     "Marriage registration, wedding dates and wedding services—",
