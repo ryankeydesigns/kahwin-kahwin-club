@@ -1,3 +1,8 @@
+import {
+  findVendorAnswer,
+  type KnowledgeLanguage,
+} from "@/lib/vendor-knowledge-base";
+
 export type KnowledgeBaseEntry = {
   question: string;
   keywords: string[];
@@ -58,9 +63,9 @@ export const knowledgeBase: KnowledgeBaseEntry[] = [
       "photography recommendation",
     ],
     answerZh:
-      "可以。Kahwin-Kahwin.club 会整理婚姻注册及婚礼摄影相关服务，包括注册仪式摄影、婚礼当天摄影、Pre-Wedding 婚纱摄影及活动摄影等。\n\n目前相关摄影师资料正在整理中。你可以告诉我婚礼日期、地区及需要的摄影类型，我可以先记录你的需求；有已确认的合作摄影师时，系统会根据你的需要介绍。",
+      "可以。Kahwin-Kahwin.club 已收录婚姻注册及婚礼摄影相关商家，包括注册仪式摄影、婚礼当天摄影、Pre-Wedding 婚纱摄影、录影、Live Feed 及活动摄影等。\n\n请告诉我婚礼日期、地区、预算及需要的摄影类型，我可以根据 Knowledge Base 内已确认的商家资料进一步筛选。",
     answerEn:
-      "Yes. Kahwin-Kahwin.club organises information on marriage registration and wedding photography, including registration ceremony coverage, wedding-day photography, pre-wedding photography and event photography.\n\nPhotographer listings are currently being prepared. Tell me your wedding date, location and preferred type of photography so I can record your needs. When a verified partner is available, the system can introduce a suitable option.",
+      "Yes. Kahwin-Kahwin.club includes verified vendors for marriage registration and wedding photography, including registration ceremony coverage, wedding-day photography, pre-wedding photography, videography, live feeds and event photography.\n\nTell me your wedding date, location, budget and preferred type of coverage, and I can narrow the options using confirmed vendor information in the Knowledge Base.",
   },
   {
     question: "注册费用是多少？",
@@ -291,16 +296,27 @@ export const knowledgeFallbackZh =
 export const knowledgeFallbackEn =
   "This information may be updated from time to time. I can help you make a further enquiry or contact the relevant person for confirmation.";
 
-export function findKnowledgeAnswer(input: string) {
+export function findKnowledgeAnswer(
+  input: string,
+  language: KnowledgeLanguage = "zh",
+) {
   const normalized = input.toLowerCase().trim();
-  if (!normalized) return knowledgeFallbackZh;
+  if (!normalized)
+    return language === "en" ? knowledgeFallbackEn : knowledgeFallbackZh;
+
+  const exactMatch = knowledgeBase.find(
+    (entry) => normalized === entry.question.toLowerCase(),
+  );
+  if (exactMatch)
+    return language === "en" ? exactMatch.answerEn : exactMatch.answerZh;
+
+  const vendorAnswer = findVendorAnswer(input, language);
+  if (vendorAnswer) return vendorAnswer;
 
   let bestMatch: KnowledgeBaseEntry | undefined;
   let bestScore = 0;
 
   for (const entry of knowledgeBase) {
-    if (normalized === entry.question.toLowerCase()) return entry.answerZh;
-
     let score = 0;
     for (const keyword of entry.keywords) {
       const normalizedKeyword = keyword.toLowerCase();
@@ -314,5 +330,7 @@ export function findKnowledgeAnswer(input: string) {
     }
   }
 
-  return bestMatch?.answerZh ?? knowledgeFallbackZh;
+  if (!bestMatch)
+    return language === "en" ? knowledgeFallbackEn : knowledgeFallbackZh;
+  return language === "en" ? bestMatch.answerEn : bestMatch.answerZh;
 }

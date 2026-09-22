@@ -19,6 +19,8 @@ const qs = [
   "婚礼礼物",
   "寻婚宴找司仪",
   "婚宴当晚娱乐与表演",
+  "传统嫁喜礼饼",
+  "西式婚礼蛋糕",
 ];
 
 export default function Assistant() {
@@ -43,7 +45,10 @@ export default function Assistant() {
   function ask(q?: string) {
     const v = (q ?? message).trim();
     if (!v) return;
-    const a = findKnowledgeAnswer(v);
+    const language = document.documentElement.lang.startsWith("en")
+      ? "en"
+      : "zh";
+    const a = findKnowledgeAnswer(v, language);
     setHistory((h) => [
       ...h,
       { role: "user", text: v },

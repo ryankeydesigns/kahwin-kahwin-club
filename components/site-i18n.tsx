@@ -91,6 +91,8 @@ const zhToEn: Record<string, string> = {
   婚礼礼物: "Wedding Gifts",
   寻婚宴找司仪: "Find a Wedding Emcee",
   婚宴当晚娱乐与表演: "Wedding Entertainment & Performances",
+  传统嫁喜礼饼: "Traditional Chinese Wedding Pastry",
+  西式婚礼蛋糕: "Western Wedding Cakes",
   "您好 ♡ 我是 Kahwin-Kahwin AI Wedding Assistant。我可以帮您了解注册程序、寻找适合日期，以及推荐婚礼服务。":
     "Hello ♡ I’m the Kahwin-Kahwin AI Wedding Assistant. I can explain the registration process, help find suitable dates and recommend wedding services.",
   "这项资料目前还没有在系统资料库中，建议通过马来西亚婚姻注册资讯平台查询确认。":
